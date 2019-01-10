@@ -1,0 +1,63 @@
+% !TEX root = ../multivar-notes.tex
+\lessondate{January 8, 2019}
+
+\Sec{Subsets $\R^n$ -- Point-set topology}
+
+\begin{defn}
+  Let $x\in \R^n$ and $\epsilon > 0$. Then $B_\epsilon (x) = \Set{y\in \R^n \mid |x-y|<\epsilon}$. This is called an $\epsilon$-neighborhood of $x$.
+\end{defn}
+\begin{defn}
+  Let $X\subseteq \R^n$ and $x\in R^n$. Then x is called
+  \begin{itemize}
+    \item interior point of $X$ if $\exists \epsilon > 0$ such that $B_\epsilon (x) \subseteq X$.
+    \item boundary point of X if $\exists \epsilon > 0$, $B_\epsilon (x) \cap X \neq \emptyset$ and $B_\epsilon (x) \cap X^c \neq \emptyset$
+    \item exterior point of X if it is an interior point of $X^c$
+  \end{itemize}
+  Notation: $\mathring{X} = \text{interior of }X = \text{set of all interior point of }X$.
+  $\delta X = \text{boundary of }X = \text{set of all boundary points of }X$
+\end{defn}
+\begin{defn}
+  \\
+  $X$ is called \ul{open} if it only consists of interior points. ($X=\mathring{X}$) \\
+  $X$ is called \ul{closed} if its complement is open. \\
+  $\implies X$ is open if it contains none of its boundary points. \\
+  $\implies X$ is closed if it contains all of its boundary points \\
+\end{defn}
+
+\exercise{1.5.1, book p.101}
+For each of the following subsets, state whether it is open or closed (or both or neither), and say why.
+
+\begin{enumerate}[a.]
+	\item $\Set{x\in \R \mid 0<x \leq 1}$ as a subset of $\R$ \\
+	\answer{Neither.} $1$ is not an interior point of this set and $0$ is not an interior point of the complement of the set.
+	\item $\Set{\Point{x \\ y}\in \R^2 \mid \sqrt{x^2+y^2}< 1}$ as a subset of $\R^2$ \\
+	\answer{Open.} The unit circle (which is the boundary) is not contained within the set.
+	\item the interval $(0,1]$ as a subset of $\R$ \\
+	\answer{Neither.} Similar to a.
+	\item $\Set{\Point{x \\ y}\in \R^2 \mid \sqrt{x^2+y^2}\leq 1}$ as a subset of $\R^2$ \\
+	\item $\{x\in\R\mid 0\leq x\leq 1\}$ as a subset of $\R$.
+	\item $\{(x,y,z)\in\mathbb R^3 \mid \sqrt{x^2+y^2+z^2}=1 \text{ and }x,y,z\neq 0\}$ as a subset of $\R^3$
+  \item the empty set as a subset of $\R$
+
+\end{enumerate}
+
+
+\exercise{1.5.2, book p.101}
+For each of the following subsets, state whether it is open or closed (or both or neither), and say why.
+\begin{enumerate}[a.]
+\item $(x,y)$-plane in $\R^3$
+\item $\R\subset \C$
+\item the line $x=5$ in the $(x,y)$-plane
+\item $(0,1)\subset \C$
+\item $\R^n\subset \R^n$
+\item the unit sphere in $\R^3$
+\end{enumerate}
+
+\exercise{1.5.5}
+For each of the following subsets of $\R$ and $\R^2$, state whether it is open or closed (or both or neither), and prove it.
+\begin{enumerate}[a.]
+	\item $\Set{\Point{x \\ y} \in \R^2 \mid 1 < x^2+y^2 < 2}$ \\
+	\item $\Set{\Point{x \\ y} \in \R^2 \mid xy\neq 0}$ \\
+	\item $\Set{\Point{x \\ y} \in \R^2 \mid y=0}$
+	\item $\Set{\mathbb{Q} \subset \R}\qquad$ (the rational numbers)
+\end{enumerate}
