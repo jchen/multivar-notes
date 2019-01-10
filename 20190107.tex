@@ -1,0 +1,69 @@
+% !TEX root = multivar-notes.tex
+\lessondate{January 7, 2019}
+
+\Sec{Subsets of $\R$}
+\begin{defn}
+Let $X\subseteq \R$. Then\dots
+\begin{enumerate}
+	\item $u\in \R$ is called an \ul{upper bound} of $X$ if $x\leq u,\ \forall x\in X$.
+	\item $l\in \R$ is called a \ul{lower bound} of $X$ if $x\geq l,\ \forall x\in X$.
+\end{enumerate}
+\end{defn}
+
+It is an axiomatic property of $\R$ that each subset of $\R$ bounded above has a least upper bound and, likewise, each subset that is bounded below has a greatest lower bound.
+
+\begin{defn}
+	Let $X\subseteq \R$ be bounded. Then\dots
+	\begin{enumerate}
+	\item $y = sup(X)$ (\ul{supremum} of X) if $y$ is an upper bound and, $y'$ is another upper bound, then $y' \geq y$.
+	\item $z = inf(X)$ (\ul{infinum} of X) if $z$ is an lower bound and, $z'$ is another lower bound, then $z' \leq z$.
+\end{enumerate}
+Also if\dots
+\begin{enumerate}
+\item $sup(X)\in X$, then we call it the maximum of $X$.
+\item $inf(X)\in X$, then we call it the minimum of $X$.
+\end{enumerate}
+\end{defn}
+
+\example
+
+$X = (0,1)$ \qquad
+$sup(X) = 1$ \qquad
+$inf(X) = 0$ \qquad
+no max, no min
+
+$X = [0,1]$ \qquad
+$sup(X) = max(X) = 1$ \qquad
+$inf(X) = min(X) = 0$
+
+\begin{proposition}
+	If $X\subseteq \R$, bounded above, then $y = sup(X)$ iff
+	\begin{enumerate}[(i)]
+		\item $y$ is an upper bound
+		\item $\forall \epsilon > 0$, $\exists x\in X$ such that $x>y-\epsilon$
+	\end{enumerate}
+\end{proposition}
+\begin{proof}
+Let $y = sup(X)$. \begin{enumerate}[(i)]
+\item is true by definition
+\item Suppose $\exists \epsilon > 0$ such that there is no $x\in X$ with $x>y-\epsilon$. \\
+Then $x\leq y-\epsilon \forall x\in X$. But that makes $y-\epsilon < y$ a smaller upper bound of $X$, which contradicts $y=sup(X)$
+\end{enumerate}
+
+Suppose next that (i) and (ii) hold for $y\in \R$. We show that $y = sup(X)$. Clearly, y is an upper bound by (i), so let $y'$ be a smaller upper bound for the sake of contradiction: $X\leq y' < y$ for all $x\in X$. Now consider $\Epsilon = y-y'$. Then $y-\epsilon = y- (y-y') = y' \geq x \forall x\in X$. This contradicts (ii) because we have found an $\epsilon > 0$ such that $\not \exists x \in X$ greater than $y-\epsilon$.
+\end{proof}
+
+\begin{proposition}
+	Let X be bounded below.
+	\[inf(X) = -sup(-X)\]
+	where $-X = \{-x \mid x\in X\}$
+\end{proposition}
+
+\begin{proof}
+	Let $y = sup (-X)$. Then $y \geq -x \implies -y \leq x$ for all $x\in X$, so $-y$ is a lower bound for $X$. Now assume for the sake of contradiction that $\exists -y' > -y$, another lower bound of $X$. Then $-y' \leq x \implies y' \geq -x$ for all $x\in X$. But $-y' > -y \implies y' < y$ so $y \neq sup(-X)$. Hence $\not \exists -y'$, another lower bound of $X$. $\implies -y = inf(X) \implies -sup(-X) = inf(X)$
+\end{proof}
+
+\begin{proposition}
+	If A, B are bounded subsets of $\R$. Then $A\cup B$ is bounded and
+	\[sup(A\cup B) = max\Set{sup(A), sup(B)}\]
+\end{proposition}
