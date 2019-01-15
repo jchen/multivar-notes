@@ -1,0 +1,38 @@
+% !TEX root = ../multivar-notes.tex
+\lessondate{January 14, 2019}\\
+
+\begin{defn}
+\textbf{(Convergent sequence; limit of sequence).} A sequence $i \mapsto \bm{a}_i$ if points in $\R^n$ \textit{converges} to $\bm{a}\in \R^n$ if
+\[\forall \epsilon > 0, \exists M \text{ s.t. } m > M \implies |\bm{a}_m-\bm{a}| < \epsilon\]
+We then call $\bm{a}$ the \textit{limit} of the sequence.
+\end{defn}
+
+\begin{proposition}
+  \textbf{(Convergence in terms of coordinates).} A sequence $m\mapsto \bm{a}_m$ with $\bm{a}_m\in\R^n$ converges to $\bm{a}$ if and only if each coordinate converges; i.e., if for all $j$ with $1\leq j\leq n$, the $j$th coordinate of $\bm{a}_m$ converges to $\bm{a}_j$.
+\end{proposition}
+
+\begin{proof}
+
+\end{proof}
+
+\begin{proposition}
+\textbf{(Limit of sequence is unique). } If the sequence $i\mapsto \bm{a}_i$ of points in $\R^n$ converges to $\bm{a}$ and to $\bm{b}$, then $\bm{a}=\bm{b}$.
+\end{proposition}
+
+\begin{proof}
+Let the sequence $i\mapsto \bm{a}_i$ converge to both $\bm{a}$ and $\bm{b}$. Then \[\forall \epsilon > 0, \exists M_a \land M_b \text{ s.t. } m > M_a, m > M_b \implies |\bm{a}-\bm{a}_{m}| < \frac{\epsilon}{2} \land |\bm{a}_{m} - \bm{b}| < \frac{\epsilon}{2}\]
+\[|\bm{a}-\bm{b}|=|(\bm{a}-\bm{a}_m)+(\bm{b}_m-\bm{b})| \leq |\bm{a}-\bm{a}_{m}|+ |\bm{a}_{m} - \bm{b}| = \epsilon\]
+\[\implies |\bm{a}-\bm{b}| = 0 \implies \bm{a}=\bm{b}\]
+\end{proof}
+
+\begin{theorem}
+\textbf{(The arithmetic of limits of sequences). } All arithmetics that apply to limits apply here.
+\end{theorem}
+
+\begin{proposition}
+\textbf{(Sequence in closed set).}
+\begin{enumerate}
+  \item Let $i\mapsto \bm{x}_i$ be a sequence in a closed set $C \subset \R^n$ converging to $\bm{x}_0\in \R^n$. Then $\bm{x}_0\in C$.
+  \item Conversely, if every convergent sequence in a set $C \in \R^n$ converges to a point in $C$, then $C$ is closed. a
+\end{enumerate}
+\end{proposition}
