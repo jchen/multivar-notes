@@ -11,5 +11,59 @@
   If $X$ is closed, we are done. \\
   Otherwise, assume $\exists Y\subset \R^n$, $Y$ closed, with
   \[X\subsetneqq Y \subseteq \overline{X}\]
-  We show that $Y=\overline{X}$: Assume otherwise for the sake of contradiction that that $\exists x\in \overline{X}$ but $x\not\in Y$. $x\in \overline{X}\implies x\in X$ or $x\in \delta X$. If $x\in X$ then $x\in Y$ as $X\subset Y$. Thus $x\in \delta X$. Define sequence in $X$ that converges to $x$, by \textbf{Proposition 4.5} we have that $Y$ is open. Hence we have achieved a contradiction $\Rightarrow \!\Leftarrow$. 
+  We show that $Y=\overline{X}$: Assume otherwise for the sake of contradiction that that $\exists z\in \overline{X} - Y\subseteq Y^C$ which is open. Then $\exists \epsilon > 0$ s.t. $B_\epsilon (z)\subseteq Y^C$. Hence $B_\epsilon (z)\subseteq R^n-X $, which contradicts $x\in \overline{X}$. Therefore $\overline{X}-Y=\emptyset$, so $Y=\overline{X}$.
 \end{proof}
+
+\begin{defn}
+  \textbf{(Continuous function). } Let $X\subset \R^n$. A mapping $f : X\rightarrow \R^m$ is \ul{continuous at} $\bm{x}_0\in X$ if
+  \[\lim_{x\rightarrow \bm{x}_0} \bm{f}(\bm{x}) = \bm{f}(\bm{x}_0);\]
+  $\bm{f}$ is continuous on $X$ if it is continuous at every point of $X$. Equivalently, $\bm{f}: X\rightarrow \R^m$ is continuous at $\bm{x}_0\in X$ if and only if for every $\epsilon > 0$, there exists $\delta>0$ such that when $|\bm{x}-\bm{x}_0|<\delta$, then $|\bm{f}(\bm{x})-\bm{f}(\bm{x}_0)|<\epsilon$.
+\end{defn}
+
+\begin{theorem}
+  \textbf{(Combining continuous mappings).} Continuous functions are closed under addition, scalar umltiplication, quotients, and compositions.
+\end{theorem}
+
+\begin{lemma}
+Hence polynomials and rational functions (given that the denominator does not vanish) are continous.
+\end{lemma}
+
+\exercise{1.5.21} For the following functions, can you choose a value for $f$ at $\Point{0 \\ 0}$ to make the function continuous at the origin?
+
+\begin{enumerate}[a.]
+  \item $\displaystyle f\Point{x \\ y} = \frac{1}{x^2+y^2+1}$ \\
+  \answer{Exists. $f\Point{0 \\ 0} = 1$.} \\
+  The limit exists at $\Point{0 \\ 0}$ by substitution.
+
+  \item $\displaystyle f\Point{x \\ y} = \frac{\sqrt{x^2+y^2}}{|x|+|y|^{1/3}}$ \\
+  \answer{Does not exist.}  \\
+  \begin{proof}
+    Approaching $\Point{0 \\ 0}$ from $\Point{x \\ 0}$ gives $\displaystyle \lim_{x\rightarrow 0} \frac{\sqrt{x^2}}{|x|} = \lim_{x\rightarrow 0}\frac{|x|}{|x|} = 1$, whilst approaching $\Point{0 \\ 0}$ from $\Point{0 \\ y}$ gives $\displaystyle \lim_{y\rightarrow 0} \frac{\sqrt{y^2}}{|y|^{1/3}}=\lim_{y\rightarrow 0}\frac{y}{y^{1/3}}=\lim_{y\rightarrow 0}y^{2/3}=0$. $\Rightarrow\!\Leftarrow$.
+  \end{proof}
+
+  \item $\displaystye f\Point{x \\ y} = (x^2 + y^2) \ln{(x^2+2y^2)}$ \\
+  \answer{$f\Point{0 \\ 0} = 0$.}\\
+  \begin{proof}
+    Consider
+  \[g\Point{x \\ y} = (x^2 + y^2) \ln{(x^2+y^2)}\]
+  \[g\Point{r \\ \theta} = r^2 \ln{(r^2)}=2r^2 \ln{(r)}\]
+  \[\lim_{r\rightarrow 0} r^2 \ln{(r^2)} = \lim_{r\rightarrow 0} \frac{2\ln{(r)}}{r^{-2}} = \lim_{r\rightarrow 0} \frac{r^{-1}}{-2r^{-3}} = \lim_{r\rightarrow 0} \frac{1}{-2} r^2=0\]
+  Now consider bounding $f\Point{0 \\ 0}$.
+  \[g\Point{x \\ y} \leq f\Point{x \\ y} \leq 0 \quad \text{for $\Point{x \\ y}$ sufficiently near $\Point{0 \\ 0}$}\]
+  And the squeeze theorem gives that $\displaystyle \lim_{(x,y)\rightarrow (0,0)}f\Point{x \\ y} = 0$. \end{proof}
+
+  \item $f\Point{x \\ y} = (x^2 + y^2) \ln{|x+y|}$ \\
+  \answer{Limit does not exist.} \\
+  \begin{proof}
+    Consider approaching $f\Point{x \\ y}$ from $y = -x$. We then have
+    \[\lim_{(x,y)\rightarrow (0,0)}f\Point{x \\ y} = \lim_{y\rightarrow 0} 2y^2\cdot \ln{|0|} = \infty !\]
+  \end{proof}
+
+\exercise{1.5.16b} Either show that the limit exists at $0$ and find it, or show that it does not exist:
+\[f\Point{x \\ y} = \frac{\sin{(x+y)}}{\sqrt{x^2+y^2}}\]
+\answer{Does not exist.} \\
+\begin{proof}
+  Consider approaching $\Point{0 \\ 0}$ from $\Point{x \\ 0}$. We then have
+  \[\[\lim_{(x,y)\rightarrow (0,0)}f\Point{x \\ y} = \lim_{x\rightarrow 0} \frac{\sin{(x)}}{|x|}\]
+  \[\lim_{x\rightarrow 0^+} \frac{\sin{(x)}}{|x|} = +1 \quad \text{but} \quad \lim_{x\rightarrow 0^-} \frac{\sin{(x)}}{|x|} = -1 \neq +1\]
+\end{enumerate}
