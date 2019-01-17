@@ -1,0 +1,15 @@
+% !TEX root = ../multivar-notes.tex
+\lessondate{January 17, 2019}\\
+
+\begin{defn}
+  $X \subseteq \R^n$, define the \ul{closure} of $X$: $\overline{X}=X\cup \delta X$
+\end{defn}
+\begin{theorem}
+  $\overline{X}$ is the smallest closed set that contains $X$.
+\end{theorem}
+\begin{proof}
+  If $X$ is closed, we are done. \\
+  Otherwise, assume $\exists Y\subset \R^n$, $Y$ closed, with
+  \[X\subsetneqq Y \subseteq \overline{X}\]
+  We show that $Y=\overline{X}$: Assume otherwise for the sake of contradiction that that $\exists x\in \overline{X}$ but $x\not\in Y$. $x\in \overline{X}\implies x\in X$ or $x\in \delta X$. If $x\in X$ then $x\in Y$ as $X\subset Y$. Thus $x\in \delta X$. Define sequence in $X$ that converges to $x$, by \textbf{Proposition 4.5} we have that $Y$ is open. Hence we have achieved a contradiction $\Rightarrow \!\Leftarrow$. 
+\end{proof}
