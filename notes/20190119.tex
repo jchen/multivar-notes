@@ -1,0 +1,30 @@
+% !TEX root = ../multivar-notes.tex
+\lessondate{January 19, 2019}\\
+
+Recall from previously, we were trying to solve:
+\[g\Point{x \\ y}= (|x|+|y|)\cdot \ln{(x^2+y^4)}<0 \text{ near }\Point{0 \\ 0}\]
+The solution then follows that
+\[(|x|+|y|)\cdot \ln{(x^4+y^4)}<g\Point{x \\ y}<0\]
+
+We can use $lp$-norms to estimate one of the values in the above function.
+\[\left|\left| \Point{x \\ y}\right|\right|_p=\left(|x|^p + |y|^p\right)^{\frac{1}{p}}, p\geq 1\quad lp\text{-norms}\]
+
+\iffalse
+\[(x^4+y^4)^{\frac{1}{4}}\cdot \ln{(x^4+y^4)}<(|x|+|y|)\cdot \ln{(x^4+y^4)}<g\Point{x \\ y}<0\]
+We can then rewrite the new function as
+\[f\Point{x \\ y}=f(x^2+y^2)=f(u)=u^{\frac{1}{4}}\cdot \ln{(u)}\]
+\[\lim_{u\rightarrow 0} f(u)=\lim_{u\rightarrow 0} u^{\frac{1}{4}}\cdot \ln{(u)}=\lim_{u\rightarrow 0} \frac{\ln{(u)}}{u^{-\frac{1}{4}}}=\lim_{u\rightarrow 0} \frac{(\ln{(u)})'}{(u^{-\frac{1}{4}})'}=\lim_{u\rightarrow 0} \frac{u^{-1}}{\frac{1}{4}u^{5/4}}\] \fi
+
+
+\begin{defn}
+  \textbf{(Bounded set).} A subset $X\in \R^n$ is \ul{bounded} if it is contained in a ball in $\R^n$ centered at the origin:
+  \[X\subset B_R(0)\quad \text{for some }R<\infty.\]
+\end{defn}
+
+\begin{defn}
+  \textbf{(Compact set).} A nonempty subset $C\subset \R^n$ is \ul{compact} if it is closed and bounded.
+\end{defn}
+
+\begin{theorem}
+  \textbf{(Convergent subsequence in a compact set).} If a compact set $C\subset \R^n$ contains a sequence $i\mapsto \bm{x}_i$, then that sequence has a convergent subsequence $j\mapsto \bm{x}_{i(j)}$ whose limit is in C.
+\end{theorem}
