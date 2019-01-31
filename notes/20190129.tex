@@ -1,0 +1,28 @@
+% !TEX root = ../multivar-notes.tex
+\lessondate{January 29, 2019}\\
+
+\begin{theorem}
+  \textbf{(Mean value theorem for functions of several variables).} Let $U \subset \R^n$ be open, let $f : U \to \R$ be differentiable, and let the segment $[\bm{a},\bm{b}]$ joining $\bm{a}$ to $\bm{b}$ be comtained in $U$. Then there exists $\bm{c}_0\in [\bm{a},\bm{b}]$ such that
+  \[f(\bm{b}-(\bm{a})= [\bm{D}f(\bm{c}_0)](\vec{\bm{b}-\bm{a}})\]
+\end{theorem}
+
+\begin{defn}
+\textbf{($C^p$ function).} A \ul{$C^p$ \emph{function}} on $U\subset \R^n$ is a function that is $p$ times continuously differentiable: all of its partial derivatives up to order p exist and are continuous on $U$.
+\end{defn}
+
+\exercise{1.9.1}
+Show that
+\[f\Point{x \\ y} = \begin{cases} \displaystyle
+\frac{x^4+y^4}{x^2+y^2} & \text{if } \Point{x \\ y}\neq \Point{0 \\ 0} \\
+0 & \text{if } \Point{x \\ y} = \Point{0 \\ 0}\end{cases}
+\]
+***
+
+
+\exercise{1.9.2}
+  Show that for
+  \[f\Point{x \\ y} = \begin{cases}
+  \displaystyle \frac{3x^2y - y^3}{x^2+y^2} & \text{if } \Point{x \\ y} \neq \Point{0 \\ 0} \\
+  0 & \text{if } \Point{x \\ y} = \Point{0 \\ 0}
+  \end{cases}\]
+  all directional derivaties exist, but that $f$ is not differentiable at the origin.
