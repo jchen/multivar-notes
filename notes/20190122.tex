@@ -2,16 +2,44 @@
 \lessondate{January 22, 2019}\\
 
 \begin{defn}
-  \textbf{(Supremum).}
+  \textbf{(Supremum).} ***
 \end{defn}
 
 \begin{defn}
-  \textbf{(Infimum).}
+  \textbf{(Infimum).} ***
 \end{defn}
 
 \begin{defn}
-  \textbf{(Minimum value; minimum).}
+  \textbf{(Minimum value; minimum).} ***
 \end{defn}
 
 \begin{theorem}
-  \textbf{(Existence of minima and maxima).} Let $C\subset \R^n$ be a compact set, and let $f : C\rightarrow \R$ be a continuous function. Then there exists a point $\bm{a}\in C$ such that $f(\bm{a})\geq f(\bm{x})$ for all $\bm{x}\in C$, and a point $\bm{b}\in C$ such that $f(\bm{b})\leq f(\bm{x})$ for all $\bm{x}\in C$. 
+  \textbf{(Existence of minima and maxima).} Let $C\subset \R^n$ be a compact subset, and let $f : C\rightarrow \R$ be a continuous function. Then there exists a point $\bm{a}\in C$ such that $f(\bm{a})\geq f(\bm{x})$ for all $\bm{x}\in C$, and a point $\bm{b}\in C$ such that $f(\bm{b})\leq f(\bm{x})$ for all $\bm{x}\in C$.
+\end{theorem}
+\begin{proof}
+  \textit{Detailed in textbook. }
+\end{proof}
+
+\theorem
+{
+  \textbf{(Mean value theorem).} If $f : [a,b] \rightarrow \R$ is continuous, and $f$ is differentiable on $(a,b)$, then there exists $c\in (a,b)$ such that
+  \[f'(c)=\frac{f(b)-f(a)}{b-a}\]
+}
+
+\theorem
+{
+  \textbf{(Fundamental theorem of algebra).} Let
+  \[p(z)=z^k+a_{k-1}z^{k-1}+\cdots + a_0\]
+  ***
+}
+
+\textbf{\ul{Derivatives}}
+
+\textit{Idea:} Replace a complicated nonlinear equation by a linear one with the understanding that the results only hold approximately in a small neighborhood around a point $p\in \R^n$ but that the error vanishes faster than the distance to $p$.
+\[\lim_{h\rightarrow 0} \frac{f(x+h)-f(x)-f'(x)\cdot h}{h}=0\]
+For $f : \R^n \rightarrow \R^m$, we are looking for a function $\bm{Df}(\bm{x}_0)\in L(\R^n,\R^m)$ such that
+\[\lim_{\vec{h}\rightarrow 0} \frac{\left\{f(\bm{x}+\vec{h})-f(\bm{x})\right\}-\left\{[\bm{Df}(\bm{x}_0)]\vec{h}\right\}}{|\vec{h}|}=0\]
+As a linear transformation $\R^n\rightarrow \R^m$, $\bm{Df}(\bm{x}_0)$ has a matrix which is called the Javobian of $f$ at $\bm{x}_0$: $[\bm{Df}(\bm{x}_0)]=[\bm{Jf}(\bm{x}_{0})]$
+
+Test on Thursday:
+Topology, sets, limits, supremum, infimum, continuity,
