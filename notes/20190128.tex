@@ -1,0 +1,34 @@
+% !TEX root = ../multivar-notes.tex
+\lessondate{January 28, 2019}\\
+
+\begin{proposition}
+\textbf{(***)}
+\end{proposition}
+
+\begin{proof}
+  Recall that the expression
+  \[\bm{r}(\vec{\bm{h}})=(\bm{f}(\bm{a}+\vec{\bm{h}})-\bm{f}(\bm{a}))-[\bm{Df}(\bm{a})]\vec{\bm{h}}\]
+  ***
+\end{proof}
+
+\ul{\textbf{Rules for calculting derivatives}}
+
+(A lot of them are surprisingly similar)
+\begin{enumerate}[1.]
+  \item If $\bm{f} : U \to \R^m$ is a constant function, then $\bm{f}$ is differentiable, and its derivative is $[0]$.
+  \item If $\bm{f} : \R^n \to \R^m$ is linear, then it is differentiable everywhere, and its derivative at all points $\bm{a}$ is $\bm{f}$, \textit{i.e.}, ***
+  \item (differentiable just take singular derivative)
+  \item sum
+  \item product
+  \item quotient rule
+  \item composition
+\end{enumerate}
+
+\begin{theorem}
+  \textbf{(Chain rule).} Let $U\subset \R^n$, $V\subset \R^m$ be open sets, let $\bm{g} : U \to V$ and $\bm{f} : V \to \R^p$ be mappings, and let $\bm{a}$ be a point of $U$. If $\bm{g}$ is differentiable at $\bm{a}$ and $\bm{f}$ is differentiable at $\bm{g}(\bm{a})$, then the composition $\bm{f} \circ \bm{g}$ is differentiable at $\bm{a}$, and its derivative is given by
+  \[\bm{D}[(\bm{f}\circ \bm{g})(\bm{a})]=[\bm{Df} (\bm{g}(\bm{a}))]\circ [\bm{Dg}(\bm{a})]\]
+\end{theorem}
+
+\example
+\textbf{(The derivative of a composition).} Define $\bm{g} : \R \to \R^3$ and $f : \R^3 \to \R$
+\[f\Point{x \\ y \\ z}=x^2+y^2+z^2;\qquad \bm{g}(t)=\Point{t \\ t^2 \\ t^3}\]
