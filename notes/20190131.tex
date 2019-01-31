@@ -1,0 +1,65 @@
+% !TEX root = ../multivar-notes.tex
+\lessondate{January 31, 2019}\\
+
+Recall
+\exercise{1.9.2a}
+  Show that for
+  \[f\Point{x \\ y} = \begin{cases}
+  \displaystyle \frac{3x^2y - y^3}{x^2+y^2} & \text{if } \Point{x \\ y} \neq \Point{0 \\ 0} \\
+  0 & \text{if } \Point{x \\ y} = \Point{0 \\ 0}
+  \end{cases}\]
+  all directional derivaties exist, but that $f$ is not differentiable at the origin.
+\begin{proof}
+\begin{align*}
+  D_xf\Point{0 \\ 0} &= \lim_{h\to 0} \frac{f\Point{0 + h \\ 0}-0}{h} \\
+  &= \lim_{h\to 0}\frac{3h^2\cdot 0 - 0^3}{h(h^2+0^2)}=0\\
+  D_yf\Point{0 \\ 0} &= \lim_{h\to 0} \frac{0-h^3}{h(0^2+h^2)}=1
+\end{align*}
+\[\bm{Jf}\Point{0 \\ 0} = \mtrx{0 & -1}\]
+\[\vec{v}=\mtrx{v_1 \\ v_2}\qquad \lim_{h\to 0}\frac{f(0+h\vec{v})-f(0)}{h}=\lim_{h\to 0}\frac{3h^2v_1^2hv_2-h^3v_2^2}{h(h^2v_1+h^2 v_2^2)}=\frac{3v_1^2v_2-v_2^3}{v_1^2+v_2^2}\]
+\[\Rightarrow \text{ all directional derivatives exist}\]
+If $f$ is differentiable, the directional derivative is $\left[\bm{Jf}\Point{0 \\ 0}\right]\vec{v}=-v_2$, so setting $\vec{v}=\mtrx{1 \\ 1}$ gives a contradiction, hence $f\Point{x \\ y}$ is not differentiable at the origin.
+\end{proof}
+
+\exercise{1.9.2b}
+Show that
+\[g\Point{x \\ y} = \begin{cases}
+\displaystyle \frac{x^2y}{x^4+y^2} & \text{if } \Point{x \\ y} \neq \Point{0 \\ 0} \\
+0 & \text{if } \Point{x \\ y} = \Point{0 \\ 0}
+\end{cases}\]
+has directional derivatives at every point but is not continuous.
+
+\begin{proof}
+  ***
+  \[\vec{v}=\mtrx{v_1 \\ v_2}\qquad \lim_{h\to 0}\frac{g(0+h\vec{v})-g(0)}{h}=\lim_{h\to 0} \frac{h^2v_1^2\cdot hv_2}{h(h^4v_1^4 + h^2 v_2^2)}=\lim_{h\to 0} \frac{v_1^2 v_2}{h^2v_1^4 + v_2^2}=\frac{v_1^2}{v_2}\]
+\end{proof}
+
+\exercise{1.9.2c}
+Show that
+\[h\Point{x \\ y} = \begin{cases}
+\displaystyle \frac{x^2 y}{x^6+y^2} & \text{if } \Point{x \\ y} \neq \Point{0 \\ 0} \\
+0 & \text{if } \Point{x \\ y} = \Point{0 \\ 0}
+\end{cases}\]
+***.
+
+\exercise{1.8.11}
+Show that if $\displaystyle f\Point{x \\ y}=\varphi\System{\frac{x+y}{x-y}}$ for some differentiable function $\varphi : \R \mapsto \R$, then
+\[xD_xf + yD_yf = 0\]
+\begin{proof}
+  \[xD_xf = xD_x \varphi\left(\frac{x+y}{x-y}\right)=x\cdot \varphi'\left(\frac{x+y}{x-y}\right)\cdot \frac{(x-y)-(x+y)}{(x-y)^2}=\varphi\left(\frac{x+y}{x-y}\right)\frac{-2xy}{(x-y)^2}\]
+  \[yD_yf = yD_y \varphi\left(\frac{x+y}{x-y}\right)=x\cdot \varphi'\left(\frac{x+y}{x-y}\right)\cdot \frac{(x-y)-(-1)(x+y)}{(x-y)^2}=\varphi\left(\frac{x+y}{x-y}\right)\frac{2xy}{(x-y)^2}\]
+\end{proof}
+
+Just for the future, we might want to switch to a new coordinate system. We'll have to use the chain rule in these cases. For example:
+\[x=r\cos{\theta} \quad y=r\sin{\theta}\]
+\[\bm{D}_\theta f\Point{X(r,\theta) \\ Y(r, \theta)}\]
+\[\bm{D}_r f\Point{X(r,\theta) \\ Y(r, \theta)}\]
+\[\bm{D} f\Point{X(r,\theta) \\ Y(r, \theta)}\]
+Consider $f$ as the ``outside'' function, and $h : \Point{r \\ \theta}\mapsto \Point{x \\ y}$. Recall
+\[\bm{D}[(\bm{f}\circ \bm{g})(\bm{a})]=[\bm{Df} (\bm{g}(\bm{a}))]\circ [\bm{Dg}(\bm{a})]\]
+We then get
+\[\bm{D}h = \mtrx{\cos\theta & -r\sin\theta \\ \sin\theta & r\cos\theta}\]
+\[\bm{D}f = \mtrx{\bm{D}_xf(r,\theta) & \bm{D}_yf(r,\theta)}\]
+\[[\bm{D}f][\bm{D}h]=\mtrx{\bm{D}_xf(r,\theta) & \bm{D}_yf(r,\theta)}\mtrx{\cos\theta & -r\sin\theta \\ \sin\theta & r\cos\theta}\]
+
+\exercise{1.8.10 (p.144)}
