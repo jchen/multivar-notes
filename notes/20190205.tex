@@ -3,7 +3,7 @@
 
 \begin{defn}
   \textbf{(Newton's method).} Let $\bm{\vec{f}}$ be a differentiable map from $U$ to $\R^n$, where $U$ is an open subset of $\R^n$. \ul{Newton's method} consists of starting with some guesses $\bm{a}_0$ for a sollution of $\bm{\vec{f}}(\bm{x})=\vec{0}$. Then linearize the equation at $\bm{a}_0$: replace the increment to the function, $\bm{\vec{f}}(\bm{x})-\bm{\vec{f}}(\bm{a}_0)$, by a linear function of the increment, $[\bm{D\vec{f}}(\bm{a}_0)](\bm{x}-\bm{a}_0)$. Now solve the corresponding linear equation:
-  \[\vec{f}}(\bm{a}_0)+[\bm{D\vec{f}}(\bm{a}_0)](\bm{x}-\bm{a}_0)=\vec{0}\]
+  \[\vec{f}(\bm{a}_0)+[\bm{D\vec{f}}(\bm{a}_0)](\bm{x}-\bm{a}_0)=\vec{0}\]
   ***
   \begin{align*}
     a_0 &= \text{initial guess} \\
@@ -13,4 +13,4 @@
 \end{defn}
 
 \example
-\[f\Point{x \\ y} = \Point{$\cos x + y - 1.1$ \\ $ x + \cos (x + y) - 0.9$}\]
+\[f\Point{x \\ y} = \Point{\cos x + y - 1.1 \\  x + \cos (x + y) - 0.9}\]
