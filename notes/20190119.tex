@@ -2,9 +2,9 @@
 \lessondate{January 19, 2019}\\
 
 Recall from previously, we were trying to solve:
-\[g\Point{x \\ y}= (|x|+|y|)\cdot \ln{(x^2+y^4)}<0 \text{ near }\Point{0 \\ 0}\]
-The solution then follows that
-\[(|x|+|y|)\cdot \ln{(x^4+y^4)}<g\Point{x \\ y}<0\]
+\[g\Point{x \\ y}= \System{|x|+|y|}\cdot \ln{(x^2+y^4)}<0 \text{ near }\Point{0 \\ 0}\]
+The solution consists of bounding our function below with a lesser function that still tends to 0: 
+\[\lim_{(x,y)\to \vec{0}}(|x|+|y|)\cdot \ln{(x^4+y^4)}<\lim_{(x,y)\to \vec{0}}(|x|+|y|)\cdot \ln{(x^2+y^4)}<\vec{0}\]
 
 We can use $lp$-norms to estimate one of the values in the above function.
 \[\left|\left| \Point{x \\ y}\right|\right|_p=\left(|x|^p + |y|^p\right)^{\frac{1}{p}}, p\geq 1\quad lp\text{-norms}\]
