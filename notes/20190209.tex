@@ -1,0 +1,60 @@
+% !TEX root = ../multivar-notes.tex
+\lessondate{February 9, 2019}\\
+
+\ul{\textbf{Inverse and Implicit Function Theorem}}
+
+\textbf{Inverse Function Theorem:} Given $f : \R^n \to \R^m$, is there a neighbourhood $U\subseteq \R^m$ with a function $g : U \to \R^n$ such that $f\circ g = g\circ f - \mathrm{id}$?
+
+\begin{theorem}
+  If a mapping $\bm{f}$ is continuously differentiable, and its derivative is invertible at some point $\bm{x}_0$, then $\bm{f}$ is locally invertible, with differentiable inverse, in some neighborhood of the point $\bm{f}(\bm{x}_0)$
+\end{theorem}
+
+\textbf{Implicit Function Theorem:} Given an equation $F(x_1, \dots, x_n) = 0$, where $F : \R^n \to \R^m$. Is there a neighbourhood $U \subseteq \R^n$ so that some of the $x_i$ are functions of the others?
+
+\begin{theorem}
+  Let $U\subset \R^n$ be open and $\bm{c}$ a point in $U$. Let $\bm{F} : U \to R^{n-k}$ be a $C^1$ mapping such that $\bm{F}(\bm{c})=0$ and $[\bm{DF}(\bm{c})]$ is onto. Then the system of linear equations $[\bm{DF}(\bm{c})](\vec{\bm{x}})=\vec{0}$ has $n-k$ pivotal (passive) variables and $k$ nonpivotal (active) variables, and there exists a neighborhood of $bm{c}$ in which $\bm{F}=0$ implicitly defines the $n-k$ passive variable as a function $\bm{g}$ of the $k$ active variables.
+\end{theorem}
+
+\example
+\[\boxed{\bm{F}\Point{x \\ y} = x^2 + y^2 -1}\]
+\[\bm{DF}\Point{x \\ y} = \mtrx{2x & 2y}\]
+\[C = \Point{1 \\ 0} : \bm{DF}\Point{1 \\ 0}=\mtrx{2 & 0}\]
+\begin{align*}
+  &\implies \text{$x$ is pivotal} \\
+  &\implies \text{$x$ is a function of $y$} \\
+  &\implies \text{$y$ cannot be pivotal} \\
+  &\implies \text{$y$ is not a function of $x$}
+\end{align*}
+
+\[\bm{DF}\Point{\sqrt{\frac{1}{2}} \\ \sqrt{\frac{1}{2}}}=\mtrx{2\sqrt{\frac{1}{2}} & 2\sqrt{\frac{1}{2}}}\]
+\begin{align*}
+  &\implies \text{both $x$ and $y$ can be pivotal} \\
+  &\implies x = x(y) \\
+  &\text{or $y = y(x)$ in some nbhd of} \Point{\sqrt{\frac{1}{2}} \\ \sqrt{\frac{1}{2}}}
+\end{align*}
+
+\exercise{2.10.1}
+Does the inverse function theorem guarantee that the following functions are locally invertible with differentiable inverse?
+
+\begin{enumerate}[a.]
+  \item $F\Point{x \\ y}=\Point{x^2y \\ -2x \\ y^2}$ at $\Point{1 \\ 1}$ \\
+  $\bm{DF}\Point{x \\ y} = \mtrx{2xy & x^2 \\ -2 & 0 \\ 0 & 2y}$ \\
+  $\bm{DF}\Point{1 \\ 1} = \mtrx{2 & 1 \\ -2 & 0 \\ 0 & 2}$ \\
+  which isn't invertible.
+  \item $F\Point{x \\ y} = \Point{x^2y \\ -2x}$ at $\Point{1 \\ 1}$ \\
+  $\bm{DF}\Point{x \\ y} = \mtrx{2xy & x^2 \\ -2 & 0}$ \\
+  $\bm{DF}\Point{1 \\ 1} = \mtrx{2 & 1 \\ -2 & 0}$ \\
+  to which an inverse exists thus this function is invertible.
+\end{enumerate}
+
+\exercise{2.10.5}
+Using direct computation, determine where $y^2 + y +3x + 1 = 0$ defines $y$ implicitly as a function of $x$.
+
+Without directly computing, we attempt to use the implicit function theorem:
+\[F(x, y) = y^2 + y +3x + 1 = 0\]
+\[\bm{D}F(x, y) = \mtrx{3 & 2y+1}\]
+\[y\neq -\frac{1}{2}\]
+Alternately, we can compute it directly:
+\[y^2 + y + \frac{1}{4} + \frac{3}{4} + 3x = 0\]
+\[(y+\frac{1}{2})^2=-3x-\frac{3}{4}\]
+\[y = -\frac{1}{2}\pm \sqrt{-3x-\frac{3}{4}}\]
