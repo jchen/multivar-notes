@@ -1,0 +1,43 @@
+% !TEX root = ../multivar-notes.tex
+\lessondate{February 11, 2019}\\
+
+\exercise{14 (another book)} Using the notation of the preceding exercise, let $A$, $B$ be sets in $\R$. Show that:
+
+\begin{enumerate}
+  \item $A^\circ \subseteq A$.
+
+  \begin{proof}
+    $\forall a\in A^\circ$, $a$ is an interior point of $A$, that is $\exists \epsilon > 0$ s.t. $B_\epsilon (a) \subseteq A$. $\forall \epsilon, a\in B_\epsilon (a)\subseteq A\implies a\in A\implies A^\circ \subseteq A$
+  \end{proof}
+
+  \item $(A^\circ)^\circ=A^\circ$
+
+  \begin{proof}
+    $(A^\circ)^\circ = \Set{x\in A^\circ | \exists\epsilon > 0\text{ with }B_\epsilon (x) \subseteq A^\circ}$.
+
+    To show that i. $(A^\circ)^\circ\subseteq A^\circ$, ii. $A^\circ\subseteq (A^\circ)^\circ$
+
+    \begin{enumerate}[i.]
+      \item Follows as above ($(A^\circ)^\circ\subseteq A^\circ$)
+
+      \item $\forall a\in A^\circ$, $\exists \epsilon > 0$ s.t. $B_\epsilon (a)\subseteq A$. Assuse $\forall \epsilon' > 0$, $B_{\epsilon'}(a)\cap (A^\circ)^C \neq \emptyset$, so $\exists a' \in B_{\epsilon'}(a)\cap (A^\circ)^C\implies \exists a' \in B_{\epsilon'}(a) \land \exists a' \in (A^\circ)^C$, let $\epsilon' = \epsilon$, so $a\in B_{\epsilon}(a)\subseteq A^\circ$ but also $a\in (A^\circ)^C \Rightarrow\!\Leftarrow$
+    \end{enumerate}
+    Hence $(A^\circ)^\circ=A^\circ$.
+  \end{proof}
+
+  \item $(A \cap B)^\circ = A^\circ \cap B^\circ$
+
+  \begin{proof}
+    \begin{enumerate}[i.]
+      \item $\forall x \in (A \cap B)^\circ$, $\exists\epsilon > 0$ s.t. $B_\epsilon (x)\subseteq A\cap B\implies B_\epsilon (x)\subseteq A, B\implies x\in A^\circ, B^\circ\implies x\in A^\circ \cap B^\circ$
+
+      \item $\forall x\in A^\circ \cap B^\circ \Rightarrow x\in A^\circ, B^\circ \implies \exists\epsilon>0, \epsilon'>0 \text{ s.t. } B_{\epsilon}(x)\subseteq A \land$ WLOG let $ \epsilon' > \epsilon \implies B_{\epsilon}(x)\subseteq B_{\epsilon'}(x)\subseteq B\implies B_{\epsilon}(x)\subseteq A\cap B\implies x\in (A\cap B)^\circ$
+    \end{enumerate}
+  \end{proof}
+
+  \item $A^\circ \cup B^\circ \subseteq (A\cup B)^\circ$
+
+  \begin{proof}
+    WLOG let $x\in A^\circ\implies \exists \epsilon > 0$ s.t. $B_\epsilon(x)\subseteq A \subseteq A\cup B\implies x\in (A \cup B)^\circ$ 
+  \end{proof}
+\end{enumerate}
