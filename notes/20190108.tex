@@ -17,7 +17,6 @@
   $\delta X = \text{boundary of }X = \text{set of all boundary points of }X$
 \end{defn}
 \begin{defn}
-  \\
   $X$ is called \ul{open} if it only consists of interior points. ($X=\mathring{X}$) \\
   $X$ is called \ul{closed} if its complement is open. \\
   $\implies X$ is open if it contains none of its boundary points. \\
@@ -35,10 +34,16 @@ For each of the following subsets, state whether it is open or closed (or both o
 	\item the interval $(0,1]$ as a subset of $\R$ \\
 	\answer{Neither.} Similar to a.
 	\item $\Set{\Point{x \\ y}\in \R^2 \mid \sqrt{x^2+y^2}\leq 1}$ as a subset of $\R^2$ \\
-	\item $\{x\in\R\mid 0\leq x\leq 1\}$ as a subset of $\R$.
-	\item $\{(x,y,z)\in\mathbb R^3 \mid \sqrt{x^2+y^2+z^2}=1 \text{ and }x,y,z\neq 0\}$ as a subset of $\R^3$
-  \item the empty set as a subset of $\R$
-
+	\answer{Closed.} This is the unit circle on the plane, and the boundary point set $x^2+y^2=1$ is wholly contained within this subset. 
+	
+	\item $\{x\in\R\mid 0\leq x\leq 1\}$ as a subset of $\R$. \\
+	\answer{Closed.} Both boundary points, $0$ and $1$ are contained within this set. 
+	
+	\item $\{(x,y,z)\in\mathbb R^3 \mid \sqrt{x^2+y^2+z^2}=1 \text{ and }x,y,z\neq 0\}$ as a subset of $\R^3$. \\
+	\answer{Closed.} This constitutes its own boundary points, where every $(x,y,z)$'s nbhd has intersections with both the set and the complement of the set. It is the unit spherical shell in 3-dimensions. 
+	
+	\item the empty set as a subset of $\R$. \\
+	\answer{Both open and closed.} Its complement, the set of all real numbers, contains all of its boundary points (of which it has none) and contains none of its boundary points (of which it has none). 
 \end{enumerate}
 
 
