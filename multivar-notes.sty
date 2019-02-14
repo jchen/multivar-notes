@@ -51,8 +51,8 @@
 \newcommand{\Min}{\ensuremath{\mathrm{min}}}
 \newcommand{\createsystem}[2]{\ensuremath{\left(\Vec{#1_1},\dots,\Vec{#1_{#2}}\right)}}
 \newcommand{\answer}[1]{\textit{Answer: }\boxed{\text{#1}}}
-\newcommand{\lessondate}[1]{\refstepcounter{lesson} \hfill
-#1}
+%\newcommand{\lessondate}[1]{\refstepcounter{lesson} \hfill #1}
+\newenvironment{lessondate}[1][]{\begingroup \refstepcounter{lesson} \hfill}{\endgroup}
 \newcommand{\Sec}[1]{\ul{\textbf{#1}}}
 
 \newcounter{lesson}
