@@ -2,17 +2,17 @@
 \lessondate{January 10, 2019}\\
 
 Recall \textbf{Prop 1.5}: 	If A, B are bounded subsets of $\R$. Then $A\cup B$ is bounded and
-\[sup(A\cup B) = max\Set{sup(A), sup(B)}\]
+\[\Sup(A\cup B) = \Max\Set{\Sup(A), \Sup(B)}\]
 
 \begin{proof}
   \begin{enumerate}[1]
-    \item Show that $x \leq max\Set{sup(A), sup(B)}$ for all $x\in A\cup B$ \\
-    Case 1: $x\in A \implies x \leq sup(A) \leq max\Set{sup(A),sup(B)}$ \\
-    Case 2: $x\in B \implies x \leq sup(B) \leq max\Set{sup(A),sup(B)}$
+    \item Show that $x \leq \Max\Set{\Sup(A), \Sup(B)}$ for all $x\in A\cup B$ \\xr
+    Case 1: $x\in A \implies x \leq \Sup(A) \leq \Max\Set{\Sup(A),\Sup(B)}$ \\
+    Case 2: $x\in B \implies x \leq \Sup(B) \leq \Max\Set{\Sup(A),\Sup(B)}$
 
-    \item Take $\epsilon > 0$ and consider $max\Set{sup(a), sup(B)}-\epsilon$ \\
-    Case 1: $max\Set{sup(A), sup(B)}=sup A \implies \exists x\in A$ such that $x>sup(A)-\epsilon \implies x \in A\cup B $ such that $x>max\Set{sup(A), sup(B)}-\epsilon$ \\
-    Case 2: $max\Set{sup(A), sup(B)}=sup B \implies $ \textit{left to the reader, follows similarly as above. }
+    \item Take $\epsilon > 0$ and consider $\Max\Set{\Sup(a), \Sup(B)}-\epsilon$ \\
+    Case 1: $\Max\Set{\Sup(A), \Sup(B)}=\Sup A \implies \exists x\in A$ such that $x>\Sup(A)-\epsilon \implies x \in A\cup B $ such that $x>\Max\Set{\Sup(A), \Sup(B)}-\epsilon$ \\
+    Case 2: $\Max\Set{\Sup(A), \Sup(B)}=\Sup B \implies $ \textit{left to the reader, follows similarly as above. }
   \end{enumerate}
 \end{proof}
 
@@ -24,7 +24,7 @@ For each of the following subsets of $\R$ and $\R^2$, state whether it is open o
   \answer{Open.} \\
   \begin{proof}
 		Let $p\in A$(nnulus). $1 < |p-0| < \sqrt{2}$. To show: $\exists \epsilon > 0$ s.t. all points in $B_\epsilon (p)$ are between $1$ and $\sqrt{2}$ from 0. There is such $\epsilon$, specifically
-		\[\epsilon = \frac{1}{2}\cdot min(\sqrt{2}-\left|p\right|, \left|p\right| - 1)\]
+		\[\epsilon = \frac{1}{2}\cdot \Min(\sqrt{2}-\left|p\right|, \left|p\right| - 1)\]
     Now we show that for $x\in B_\epsilon (p)$, $1 < |x|^2 < 2$: \\
     WLOG: Consider $p\in (1,\sqrt{2})$ on the $x$-axis. Then the neighborhood of $p$ is:
     \[B_\epsilon (p) = \Set{\Point{p+r \sin{\theta} \\ r \sin{\theta}} \,\middle\vert\, r\in [0,\epsilon)}\]
@@ -66,7 +66,7 @@ We could also use the triangle inequality ($|a+b| \leq |a| + |b|$ and $|a-b|\geq
     Consider $Z = \bigcap^n_{i=I}X_i$. \\
     To show: each $z\in Z$ is an interior point of $Z$. Since $z\in Z$, $z\in X_i$ for $i=1,\dots,n$. Since $X_i$ is open, $\exists\epsilon_i > 0 \mid B_{\epsilon_i}(z) \subset X_i$. As there are finitely many $i$, we choose the smallest $\epsilon=min\Set{\epsilon_i \mid i = 1,\dots,n}$. Then we have
     \[B_\epsilon (z) \subset B_{\epsilon_i}(z) \subset X_i \text{ for all } x=1,\dots,n\]
-    Thus $\mathcal{B}_\epsilon (z)\subset Z$, making $z$ an interior point of $Z$.
+    Thus $B_\epsilon (z)\subset Z$, making $z$ an interior point of $Z$.
   \end{proof}
 
   \item\textbf{An infinite interesection of open sets is not necessarily open.}
