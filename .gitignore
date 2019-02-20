@@ -33,4 +33,5 @@
 *.tdo
 *.xdv
 *.yaml
+*.tmp
 .DS_Store
