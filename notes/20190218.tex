@@ -20,12 +20,10 @@ Example:
 \[\gamma : \Point{\theta \\ \varphi} \mapsto \Point{\cos \theta \cos \varphi \\ \sin \theta \cos \varphi \\ \sin \varphi}\]
 
 We can visualize this in Mathematica by using
-***
 \lstset{language=Mathematica}
 \footnotesize
 \begin{lstlisting}
-ParametricPlot3D[{Cos[\theta] Cos[\varphi], Sin[\theta] Cos[\varphi], Sin[\varphi]}, 
-	{\theta, -1, 1}, {\varphi, -1, 1}]
+ParametricPlot3D[{Cos[x]Cos[y],Sin[x]Cos[y],Sin[y]},{x,-1,1},{y,-1,1}]
 \end{lstlisting}
 \normalsize
 
@@ -37,15 +35,10 @@ ParametricPlot3D[{Cos[\theta] Cos[\varphi], Sin[\theta] Cos[\varphi], Sin[\varph
 	
 	\item Find an equation for the closure $\overline{X}$ of $X$. Is $\overline{X}$ exactly $X$? 
 	
-	\answer{$\frac{y}{x} = \frac{z}{y}$ \textit{or} $y^2 = xz$}  This is the limit as $t$ approaches $\infty$ and there is one line that is never traced out. 
+	\answer{$\overline{x} : \frac{y}{x} = \frac{z}{y}$ \textit{or} $y^2 = xz$}  This is the limit as $t$ approaches $\infty$ and there is one line that is never traced out. 
 	
 	\footnotesize
 	\begin{lstlisting}
 	ContourPlot3D[{y*y==x*z},{x,-5,5},{y,-5,5},{z,-5,5}]
 	\end{lstlisting}
 	\normalsize
-	
-	\item Show that 
-	
-	
-\end{enumerate}
