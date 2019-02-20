@@ -1,0 +1,51 @@
+% !TEX root = ../multivar-notes.tex
+\lessondate{February 18, 2019}
+
+\ul{\textbf{Parametrization}}
+
+Consider the unit circle in $\R^2$ (a manifold). 
+\[x^2+y^2=1\]
+A parametrization of this could be $\gamma(t)=\Point{\cos t \\ \sin t}, t\in (0,2\pi)$ \footnote{The open interval is of no significance, it goes away when integrating or working with it. }
+
+\begin{defn}
+	\textbf{(Parametrization of a manifold).} A \ul{parametrization} of a $k$-manifold $M\subset \R^n$ is a mapping $\gamma : U \subset \R^k \to M$ satisfying the following conditions: 
+	\begin{enumerate}[1.]
+	\item $U$ is open. 
+	\item $\gamma$ is $C^1$, one to one, and onto $M$. 
+	\item $\left[\mathbf{D}\gamma (\bm{u})\right]$ is one to one for every $\bm{u}\in U$. 
+	\end{enumerate}
+\end{defn}
+
+Example: 
+\[\gamma : \Point{\theta \\ \varphi} \mapsto \Point{\cos \theta \cos \varphi \\ \sin \theta \cos \varphi \\ \sin \varphi}\]
+
+We can visualize this in Mathematica by using
+***
+\lstset{language=Mathematica}
+\footnotesize
+\begin{lstlisting}
+ParametricPlot3D[{Cos[\theta] Cos[\varphi], Sin[\theta] Cos[\varphi], Sin[\varphi]}, 
+	{\theta, -1, 1}, {\varphi, -1, 1}]
+\end{lstlisting}
+\normalsize
+
+\exercise{3.1.11}
+\begin{enumerate}[a.]
+	\item Find a parametrization for the union $X$ of the lines through the origin and a point of the parametrized curve $t\mapsto \Point{t \\ t^2 \\ t^3}$. 
+	
+	\answer{$t,u\mapsto \Point{ut \\ ut^2 \\ ut^3}$}
+	
+	\item Find an equation for the closure $\overline{X}$ of $X$. Is $\overline{X}$ exactly $X$? 
+	
+	\answer{$\frac{y}{x} = \frac{z}{y}$ \textit{or} $y^2 = xz$}  This is the limit as $t$ approaches $\infty$ and there is one line that is never traced out. 
+	
+	\footnotesize
+	\begin{lstlisting}
+	ContourPlot3D[{y*y==x*z},{x,-5,5},{y,-5,5},{z,-5,5}]
+	\end{lstlisting}
+	\normalsize
+	
+	\item Show that 
+	
+	
+\end{enumerate}
