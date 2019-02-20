@@ -5,12 +5,14 @@
 \RequirePackage[english]{babel}
 \RequirePackage[bottom]{footmisc}
 \RequirePackage{amsmath}
-\usepackage{bm}
+\RequirePackage{bm}
+\RequirePackage[T1]{fontenc}
+\RequirePackage{euler}
 \RequirePackage{amsfonts}
 \RequirePackage{amssymb}
 \RequirePackage{mathpazo} % text font is mathpazo
-\RequirePackage[notext, lighttext, intlimits]{kpfonts} % math font is kp-fonts
-\RequirePackage[T1]{fontenc}
+\RequirePackage[euler-digits,euler-hat-accent]{eulervm} % math font: AMS Euler
+% \RequirePackage[notext, lighttext, intlimits]{kpfonts} % math font is kp-fonts
 \RequirePackage{microtype} % optimizes spacing for text
 \RequirePackage{geometry}
 \geometry{ % defines page margins and spacing
@@ -30,6 +32,8 @@
 \RequirePackage{enumerate}
 \RequirePackage{soul}
 \RequirePackage{parskip}
+\RequirePackage{listings}
+
 
 \newcommand{\Df}{\bm{Df}}
 \newcommand{\Jf}{\bm{Jf}}
