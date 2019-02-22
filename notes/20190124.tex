@@ -7,35 +7,49 @@ Let $f : \R^n \rightarrow \R^m$
 
 Goal: local linearization of $f$ with error going to zero sufficiently fast.
 
-\[\lim_{\vec{h}\rightarrow 0}\frac{1}{|\vec{h}|}(f(\bm{x}+\vec{h})-f(\vec{\bm{x}}))-[\bm{Df}(\bm{x})]\vec{h}=\vec{0}\qquad [\bm{Df}(\bm{x})]\in L(\R^n, \R^m)\]
+\begin{defn}{Derivatives in $\R^n$}
+Let $U\subset \R^n$ be an open subset and let $\bm{f} : U \to \R^m$ be a mapping; let $\bm{a}$ be a point in $U$. If there exists a linear transformation (represented by matrix) $[\bm{Df}(\bm{x})] \in\mathcal{L}(\R^n, \R^m)$ such that
+\[\lim_{\vec{h}\rightarrow 0}\frac{1}{|\vec{h}|}(\bm{f}(\bm{x}+\vec{h})-\bm{f}(\vec{\bm{x}}))-[\bm{Df}(\bm{x})]\vec{h}=\vec{0}\]
+then $\bm{f}$ is \ul{differentiable} at $\bm{a}$, and $[\bm{Df}(\bm{x})]$ is unique and is the \ul{derivative} of $\bm{f}$ at $\bm{a}$. 
+\end{defn}
 
-If we know that $[\bm{Df}(\bm{x})]$ exists, we can calculate its matrix $[\bm{Jf}(\bm{x})]$ (Javobian matrix) by evaluating $[\bm{Df}(\bm{x})]$ on the standard basis vectors.
+If we know that $[\bm{Df}(\bm{x})]$ exists, we can calculate its matrix $[\bm{Jf}(\bm{x})]$ (Jacobian matrix) by evaluating $[\bm{Df}(\bm{x})]$ on the standard basis vectors.
 
 We know that
 \begin{align*}
 0 &= \lim_{|h|\rightarrow 0}\frac{1}{|h\vec{e}_i|}\left( f(\bm{x}+h\vec{e}_i)-f(\bm{x})-[\bm{Df}(\bm{x})](h\vec{e}_i) \right) \\
 &= \lim_{|h|\rightarrow 0}\frac{1}{|h|}\left( f(\bm{x}+h\vec{e}_i)-f(\bm{x})-h[\bm{Df}(\bm{x})](\vec{e}_i)\right) \\
-&= \lim_{h\rightarrow 0}\frac{f(\bm{x}+h\vec{e}_i)-f(\bm{x})}{h} -[\bm{Df}(\bm{x})](\vec{e}_i) \\
+&= \lim_{h\rightarrow 0}\frac{f(\bm{x}+h\vec{e}_i)-f(\bm{x})}{h} -[\bm{Df}(\bm{x})](\vec{e}_i)
 \end{align*}
 
 \vspace{-12pt}
 
 \[\implies [\bm{Df}(\bm{x})]\vec{e}_i = \lim_{h\rightarrow 0}\frac{f(\bm{x}+h\vec{e}_i)-f(\bm{x})}{h}\qquad (\#)\]
 
-The right-hand side of $\#$ is called the partial derivative of $f$ at $x$: in components, it looks as the follows:
-\[\lim_{h\rightarrow 0}\frac{
-f\Point{x_1& \\ x_2& \\ \vdots& \\ x_i &+ h \\ \vdots & \\ x_n&} - f\Point{x_1 \\ x_2 \\ \vdots \\ x_i \\ \vdots \\ x_n}
-}{h}\]
+\begin{defn}{Partial derivative}
+The right-hand side of $\#$ is called the \ul{partial derivative} of $f$ (with respect to the $i$th variable evaluated at $\bm{x}$): 
+\[D_i f(\bm{x})\overset{\mathrm{def}}{=}\lim_{h\rightarrow 0}\frac{1}{h} \left(f\Point{x_1  \\ \vdots\ \\ x_i + h \\ \vdots \\ x_n} - f\Point{x_1 \\ \vdots \\ x_i \\ \vdots \\ x_n}\right)\]
 
-Therefore, we can calculate it by considerinf $x_i$ the only variable, and holding all other components constant.
+(Given such limit exists, of course). Therefore, we can calculate it by considering $x_i$ the only variable, and holding all other components constant.
+\end{defn}
 
 There are a variety of notations for this derivative:
 \begin{itemize}
+\begin{minipage}{0.5\linewidth}
   \item $D_i f(x)$
   \item $D_x f(\bm{x}), D_y f(\bm{x}), D_z f(\bm{x})$
+\end{minipage}\begin{minipage}{0.5\linewidth}
   \item $\frac{\delta f}{\delta x}$, $\frac{\delta f}{\delta x_2}$ \dots
   \item $f_x, f_y$ \dots
+  \end{minipage}
 \end{itemize}
+
+Let's backtrack a bit for a full definition of the Jacobian: 
+\begin{defn}{Jacobian matrix}
+	The \ul{Jacobian matrix} of a function $\bm{f} : U\subset \R^n\to \R^m$ [i.e. $\bm{f}\Point{\bm{a}} = \Point{f_1(\bm{a}),\dots,f_n(\bm{a})}$] is the $m \times n$ matrix composed of the $n$ partial derivatives of $\bm{f}$ evaluated at $\bm{a}$: 
+	\[[\bm{Jf}(\bm{a})] \overset{\mathrm{def}}{=} \mtrx{D_1f_1(\bm{a}) & \cdots & D_nf_1(\bm{a}) \\ \ \vdots & \ddots & \vdots \\ D_1f_m(\bm{a}) & \cdots & D_nf_m(\bm{a})}\]
+\end{defn}
+
 
 \example
 \begin{align*}
@@ -49,22 +63,18 @@ There are a variety of notations for this derivative:
 
 (\textbf{Preview:} We will see shortly that $f$ is differentiable if all its partials exist and are continuous.)
 
-This $Df$ gives us the rate of change in the axes, if we want to find the directional rate of change in any direction, we have to use a direction derivative.
+This $\bm{Df}$ gives us the rate of change in the axes, if we want to find the directional rate of change in any direction, we have to use a direction derivative.
 
 \begin{defn}{Directional derivatives}
-The \ul{directional derivative} of $f$ at $x$ in direction $\vec{v}$ gives the rate of change of $f$ as we step into direction $\vec{v}$. It is defined as
-\[\lim_{h\to 0}\frac{f(x+h\vec{v})-f(x)}{h}\]
-We will see shortly that this evaluates to $[Df(x)]\vec{v}$.
+The \ul{directional derivative} of $\bm{f}$ at $\bm{x}$ in direction $\vec{\bm{v}}$ gives the rate of change of $f$ as we step into direction $\vec{v}$. It is defined as
+\[\lim_{h\to 0}\frac{\bm{f}(\bm{x}+h\vec{\bm{v}})-\bm{f}(\bm{x})}{h}\]
+We will see shortly that this evaluates to $[\bm{Df}(\bm{x})]\vec{\bm{v}}$.
 \end{defn}
-
-Let's brush up on some simple derivatives first:
-\begin{enumerate}[a.]
-  \item $f(x) = \sin^3{(x^2 + \cos{x})} = \sin$
-\end{enumerate}
 
 \exercise{1.7.4} Using the definition, check whether the following functions are differentiable at 0.
 \begin{enumerate}[a.]
-  \item $f(x) = |x|^{3/2}$
+  \item $f(x) = |x|^{3/2}$ \\
+  \answer{Exists.}
   \item $\displaystyle f(x) = \begin{cases}x \cdot \ln{|x|} & \text{if } x \neq 0 \\ 0 & \text{if } x = 0 \end{cases}$ \\
   \answer{Does not exist.}
   \item $\displaystyle f(x) = \begin{cases}x/ \ln{|x|} & \text{if } x \neq 0 \\ 0 & \text{if } x = 0\end{cases}$ \\
