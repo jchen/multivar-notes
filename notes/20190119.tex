@@ -1,21 +1,26 @@
 % !TEX root = ../multivar-notes.tex
 \lessondate{January 19, 2019}\\
 
-Recall from previously, we were trying to solve:
+Recall from previously, we were trying to solve the following limit:
 \[g\Point{x \\ y}= \System{|x|+|y|}\cdot \ln{(x^2+y^4)}<0 \text{ near }\Point{0 \\ 0}\]
 The solution consists of bounding our function below with a lesser function that still tends to 0: 
 \[\lim_{(x,y)\to \vec{0}}(|x|+|y|)\cdot \ln{(x^4+y^4)}<\lim_{(x,y)\to \vec{0}}(|x|+|y|)\cdot \ln{(x^2+y^4)}<\vec{0}\]
 
-We can use $lp$-norms to estimate one of the values in the above function.
+We can use $lp$-norms to estimate one of the values in the above function
 \[\left|\left| \Point{x \\ y}\right|\right|_p=\left(|x|^p + |y|^p\right)^{\frac{1}{p}}, p\geq 1\quad lp\text{-norms}\]
-***
+due to the fact that
+\[(x^4+y^4)^{\frac{1}{4}} < |x| + |y|\]
+thus
+\[\lim_{(x,y)\to \vec{0}}(x^4+y^4)^{\frac{1}{4}}\cdot \ln{(x^4+y^4)}<\lim_{(x,y)\to \vec{0}}(|x|+|y|)\cdot \ln{(x^2+y^4)}<\vec{0}\]
+We can substitute $u$ into this function as follows: 
+\[f\Point{x \\ y}=f(x^4+y^4)=f(u)=u^{\frac{1}{4}}\cdot \ln{(u)}\]
+\[\lim_{u\rightarrow 0} f(u)=\lim_{u\rightarrow 0} u^{\frac{1}{4}}\cdot \ln{(u)}=\lim_{u\rightarrow 0} \frac{\ln{(u)}}{u^{-\frac{1}{4}}}\stackrel{L'H}{=}\lim_{u\rightarrow 0} \frac{u^{-1}}{-\frac{1}{4}u^{-5/4}}=\lim_{u\rightarrow 0}-4u^{\frac{1}{4}}=0\]
 
-\iffalse
-\[(x^4+y^4)^{\frac{1}{4}}\cdot \ln{(x^4+y^4)}<(|x|+|y|)\cdot \ln{(x^4+y^4)}<g\Point{x \\ y}<0\]
-We can then rewrite the new function as
-\[f\Point{x \\ y}=f(x^2+y^2)=f(u)=u^{\frac{1}{4}}\cdot \ln{(u)}\]
-\[\lim_{u\rightarrow 0} f(u)=\lim_{u\rightarrow 0} u^{\frac{1}{4}}\cdot \ln{(u)}=\lim_{u\rightarrow 0} \frac{\ln{(u)}}{u^{-\frac{1}{4}}}=\lim_{u\rightarrow 0} \frac{(\ln{(u)})'}{(u^{-\frac{1}{4}})'}=\lim_{u\rightarrow 0} \frac{u^{-1}}{\frac{1}{4}u^{5/4}}\] \fi
+We sandwich the original function from both sides: 
+\[\vec{0}<\lim_{(x,y)\to \vec{0}}(|x|+|y|)\cdot \ln{(x^2+y^4)}<\vec{0}\]
+\[\lim_{(x,y)\to \vec{0}} g\Point{x \\ y} = 0\]
 
+\newpage
 
 \begin{defn}{Bounded set}
 A subset $X\in \R^n$ is \ul{bounded} if it is contained in a ball in $\R^n$ centered at the origin:
