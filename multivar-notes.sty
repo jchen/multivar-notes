@@ -34,10 +34,10 @@
 \pagestyle{myheadings}
 \pagestyle{fancy}
 \fancyhf{}
-\title{MA662 – Multivariable Calculus}
+\title{MA662 - Multivariable Calculus}
 \lhead{\small Jiahua Chen}
 \rhead{\small \@title}
-\cfoot{\small{\textsc{pg. \thepage}}}
+\cfoot{\small{\textsc{p. \thepage}}}
 
 \RequirePackage{tkz-euclide,tikz}
 \usetkzobj{all}
@@ -84,19 +84,22 @@
 \newcounter{statement}[lesson]
 
 \RequirePackage{tcolorbox}
+\def\changemargin#1#2{\list{}{\rightmargin#2\leftmargin#1}\item[]}
+\let\endchangemargin=\endlist 
 \definecolor{blue}{rgb}{0.2, 0.2, 0.6}
 \newenvironment{theorem}[1][Theorem]{\begingroup \refstepcounter{statement} \begin{trivlist} \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries \thelesson .\thestatement.}]}{\end{trivlist}\endgroup}
 \newenvironment{lemma}[1][Lemma]{\begingroup \refstepcounter{statement} \begin{trivlist} \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries \thelesson .\thestatement.}]}{\end{trivlist}\endgroup}
-\newenvironment{exercise}[2][Exercise]{\begingroup \refstepcounter{statement} \begin{trivlist} \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}\endgroup}
+\newcommand{\exercise}[1]{\textbf{Exercise #1.}}
+% \newenvironment{exercise}[2][Exercise]{\begingroup \refstepcounter{statement} \begin{trivlist} \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}\endgroup}
 \newenvironment{reflection}[1][Reflection]{\begingroup \refstepcounter{statement} \begin{trivlist} \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries \thelesson .\thestatement.}]}{\end{trivlist}\endgroup}
 \newenvironment{proposition}[1][Proposition]{\begingroup \refstepcounter{statement} \begin{trivlist} \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries \thelesson .\thestatement.}]}{\end{trivlist}\endgroup}
 \newenvironment{corollary}[1][Corollary]{\begingroup \refstepcounter{statement} \begin{trivlist} \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries \thelesson .\thestatement.}]}{\end{trivlist}\endgroup}
 %\newenvironment{defn}[1][Definition]{\begingroup \refstepcounter{statement} \color{blue} \begin{trivlist}
 %\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries \thelesson .\thestatement.}]}{\end{trivlist}\endgroup}
 
-\newenvironment{defn}[2][Definition]{\begingroup \refstepcounter{statement}
-\begin{tcolorbox}[colframe=Blue,colback=Emerald!10!white,title=  {\bfseries #1 \thelesson .\thestatement. (#2)}]\color{blue}
-}{\end{tcolorbox}\endgroup}
+\newenvironment{defn}[2][Definition]{\begingroup \begin{changemargin}{0in}{0in}\refstepcounter{statement}
+\begin{tcolorbox}[colframe=blue,colback=Emerald!10!white,title=  {\bfseries #1 \thelesson .\thestatement. (#2)}]\color{blue}
+}{\end{tcolorbox}\end{changemargin}\endgroup}
 
 \newenvironment{proof}{\textit{Proof:}}{\hfill$\square$}
 
