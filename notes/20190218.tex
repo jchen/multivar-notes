@@ -7,8 +7,8 @@ Consider the unit circle in $\R^2$ (a manifold).
 \[x^2+y^2=1\]
 A parametrization of this could be $\gamma(t)=\Point{\cos t \\ \sin t}, t\in (0,2\pi)$ \footnote{The open interval is of no significance, it goes away when integrating or working with it. }
 
-\begin{defn}
-	\textbf{(Parametrization of a manifold).} A \ul{parametrization} of a $k$-manifold $M\subset \R^n$ is a mapping $\gamma : U \subset \R^k \to M$ satisfying the following conditions: 
+\begin{defn}{Parametrization of a manifold}
+A \ul{parametrization} of a $k$-manifold $M\subset \R^n$ is a mapping $\gamma : U \subset \R^k \to M$ satisfying the following conditions: 
 	\begin{enumerate}[1.]
 	\item $U$ is open. 
 	\item $\gamma$ is $C^1$, one to one, and onto $M$. 
@@ -19,13 +19,9 @@ A parametrization of this could be $\gamma(t)=\Point{\cos t \\ \sin t}, t\in (0,
 Example: 
 \[\gamma : \Point{\theta \\ \varphi} \mapsto \Point{\cos \theta \cos \varphi \\ \sin \theta \cos \varphi \\ \sin \varphi}\]
 
-We can visualize this in Mathematica by using
-\lstset{language=Mathematica}
-\footnotesize
-\begin{lstlisting}
-ParametricPlot3D[{Cos[x]Cos[y],Sin[x]Cos[y],Sin[y]},{x,-1,1},{y,-1,1}]
-\end{lstlisting}
-\normalsize
+We can visualize this in Mathematica using
+
+\Mathematica{20190218}{1}{2}
 
 \exercise{3.1.11}
 \begin{enumerate}[a.]
@@ -38,7 +34,5 @@ ParametricPlot3D[{Cos[x]Cos[y],Sin[x]Cos[y],Sin[y]},{x,-1,1},{y,-1,1}]
 	\answer{$\overline{x} : \frac{y}{x} = \frac{z}{y}$ \textit{or} $y^2 = xz$}  This is the limit as $t$ approaches $\infty$ and there is one line that is never traced out. 
 	
 	\footnotesize
-	\begin{lstlisting}
-	ContourPlot3D[{y*y==x*z},{x,-5,5},{y,-5,5},{z,-5,5}]
-	\end{lstlisting}
+\Mathematica{20190218}{7}{8}
 	\normalsize
