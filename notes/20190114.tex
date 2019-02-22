@@ -4,15 +4,15 @@
 \begin{defn}{Convergent sequence; limit of sequence}
 A sequence $i \mapsto \bm{a}_i$ if points in $\R^n$ \ul{converges} to $\bm{a}\in \R^n$ if
 \[\forall \epsilon > 0,\ \exists M \text{ s.t. } m > M \implies |\bm{a}_m-\bm{a}| < \epsilon\]
-We then call $\bm{a}$ the \textit{limit} of the sequence.
+We then call $\bm{a}$ the \ul{limit} of the sequence.
 \end{defn}
 
 \begin{proposition}
-  \textbf{(Convergence in terms of coordinates).} A sequence $m\mapsto \bm{a}_m$ with $\bm{a}_m\in\R^n$ converges to $\bm{a}$ if and only if each coordinate converges; i.e., if for all $j$ with $1\leq j\leq n$, the $j$th coordinate of $\bm{a}_m$ converges to $\bm{a}_j$.
+  \textbf{(Convergence in terms of coordinates).} A sequence $m\mapsto \bm{a}_m$ with $\bm{a}_m\in\R^n$ converges to $\bm{a}$ if and only if each coordinate converges; i.e., if for all $j$ with $1\leq j\leq n$, the $j$th coordinate of $\bm{a}_m$ converges to $\bm{a}_j$, the $j$th coordinate of the limit $\bm{a}$.
 \end{proposition}
 
 \begin{proof}
-
+(p.88) The gist of the proof is to find sufficiently large $M$ for given $\epsilon$, in this case we set $M = max\Set{M_i}$ which guarantees that we stay within the error. 
 \end{proof}
 
 \begin{proposition}
@@ -33,6 +33,6 @@ Let the sequence $i\mapsto \bm{a}_i$ converge to both $\bm{a}$ and $\bm{b}$. The
 \textbf{(Sequence in closed set).}
 \begin{enumerate}
   \item Let $i\mapsto \bm{x}_i$ be a sequence in a closed set $C \subset \R^n$ converging to $\bm{x}_0\in \R^n$. Then $\bm{x}_0\in C$.
-  \item Conversely, if every convergent sequence in a set $C \in \R^n$ converges to a point in $C$, then $C$ is closed. a
+  \item Conversely, if every convergent sequence in a set $C \in \R^n$ converges to a point in $C$, then $C$ is closed. 
 \end{enumerate}
 \end{proposition}
