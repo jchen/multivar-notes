@@ -1,12 +1,12 @@
 % !TEX root = ../multivar-notes.tex
 \lessondate{January 8, 2019}
 
-\Sec{Subsets $\R^n$ -- Point-set topology}
+\Topic{Subsets $\R^n$ -- Point-set topology}
 
-\begin{defn}
-  Let $x\in \R^n$ and $\epsilon > 0$. Then $B_\epsilon (x) = \Set{y\in \R^n \mid |x-y|<\epsilon}$. This is called an $\epsilon$-neighborhood of $x$.
+\begin{defn}{Neighborhood}
+  Let $x\in \R^n$ and $\epsilon > 0$. Then $B_\epsilon (x) = \Set{y\in \R^n \mid |x-y|<\epsilon}$. This is called an $\epsilon$-\ul{neighborhood} of $x$.
 \end{defn}
-\begin{defn}
+\begin{defn}{Classification of points}
   Let $X\subseteq \R^n$ and $x\in R^n$. Then x is called
   \begin{itemize}
     \item interior point of $X$ if $\exists \epsilon > 0$ such that $B_\epsilon (x) \subseteq X$.
@@ -16,7 +16,7 @@
   Notation: $\mathring{X} = \text{interior of }X = \text{set of all interior point of }X$.
   $\delta X = \text{boundary of }X = \text{set of all boundary points of }X$
 \end{defn}
-\begin{defn}
+\begin{defn}{Closure}
   $X$ is called \ul{open} if it only consists of interior points. ($X=\mathring{X}$) \\
   $X$ is called \ul{closed} if its complement is open. \\
   $\implies X$ is open if it contains none of its boundary points. \\

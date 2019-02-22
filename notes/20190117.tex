@@ -1,7 +1,7 @@
 % !TEX root = ../multivar-notes.tex
 \lessondate{January 17, 2019}\\
 
-\begin{defn}
+\begin{defn}{Closure}
   $X \subseteq \R^n$, define the \ul{closure} of $X$: $\overline{X}=X\cup \delta X$
 \end{defn}
 \begin{theorem}
@@ -14,8 +14,8 @@
   We show that $Y=\overline{X}$: Assume otherwise for the sake of contradiction that that $\exists z\in \overline{X} - Y\subseteq Y^C$ which is open. Then $\exists \epsilon > 0$ s.t. $B_\epsilon (z)\subseteq Y^C$. Hence $B_\epsilon (z)\subseteq R^n-X $, which contradicts $x\in \overline{X}$. Therefore $\overline{X}-Y=\emptyset$, so $Y=\overline{X}$.
 \end{proof}
 
-\begin{defn}
-  \textbf{(Continuous function). } Let $X\subset \R^n$. A mapping $f : X\rightarrow \R^m$ is \ul{continuous at} $\bm{x}_0\in X$ iff
+\begin{defn}{Continuous function}
+Let $X\subset \R^n$. A mapping $f : X\rightarrow \R^m$ is \ul{continuous at} $\bm{x}_0\in X$ iff
   \[\lim_{x\rightarrow \bm{x}_0} \bm{f}(\bm{x}) = \bm{f}(\bm{x}_0);\]
   $\bm{f}$ is continuous on $X$ if it is continuous at every point of $X$. Equivalently, $\bm{f}: X\rightarrow \R^m$ is continuous at $\bm{x}_0\in X$ if and only if for every $\epsilon > 0$, there exists $\delta>0$ such that when $|\bm{x}-\bm{x}_0|<\delta$, then $|\bm{f}(\bm{x})-\bm{f}(\bm{x}_0)|<\epsilon$.
 \end{defn}
