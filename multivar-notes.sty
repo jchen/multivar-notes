@@ -1,17 +1,18 @@
+%% Class declaration
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{multivar-notes}
 
+%% Input and layout
 \RequirePackage[utf8]{inputenc}
 \RequirePackage[english]{babel}
-\RequirePackage[bottom]{footmisc}
 \RequirePackage{amsmath}
-\RequirePackage{bm}
 \RequirePackage[T1]{fontenc}
 \RequirePackage{textcomp}
-\RequirePackage[utf8]{inputenc} % The default since 2018.
+\RequirePackage[utf8]{inputenc}
 \RequirePackage{amsfonts}
 \RequirePackage{amssymb}
-\RequirePackage{tgpagella}
+\RequirePackage{pxfonts}
+% \RequirePackage{tgpagella}
 \RequirePackage{eulerpx}
 % \RequirePackage{euler}
 % \RequirePackage{mathpazo} % text font is mathpazo
@@ -27,17 +28,31 @@
   headsep=2ex,
   foot=36pt}
 
-\renewcommand{\arraystretch}{0.8}
-\renewcommand{\implies}{\Rightarrow}
-\renewcommand{\leq}{\leqslant}
-\renewcommand{\geq}{\geqslant}
+\RequirePackage[bottom]{footmisc}
 
-\RequirePackage{tikz}
+\RequirePackage{fancyhdr}
+\pagestyle{myheadings}
+\pagestyle{fancy}
+\fancyhf{}
+\title{MA662 – Multivariable Calculus}
+\lhead{\small Jiahua Chen}
+\rhead{\small \@title}
+\cfoot{\small{\textsc{pg. \thepage}}}
+
+\RequirePackage{tkz-euclide,tikz}
+\usetkzobj{all}
 \RequirePackage{enumerate}
 \RequirePackage{soul}
 \RequirePackage{parskip}
 \RequirePackage{listings}
+\RequirePackage{xcolor}
 
+\newcommand{\bm}{\textbf}
+
+\renewcommand{\arraystretch}{0.8}
+\renewcommand{\implies}{\Rightarrow}
+\renewcommand{\leq}{\leqslant}
+\renewcommand{\geq}{\geqslant}
 
 \newcommand{\Df}{\bm{Df}}
 \newcommand{\Jf}{\bm{Jf}}
@@ -60,12 +75,15 @@
 \newcommand{\createsystem}[2]{\ensuremath{\left(\Vec{#1_1},\dots,\Vec{#1_{#2}}\right)}}
 \newcommand{\answer}[1]{\textit{Answer: }\boxed{\text{#1}}}
 %\newcommand{\lessondate}[1]{\refstepcounter{lesson} \hfill #1}
-\newenvironment{lessondate}[1][]{\begingroup \refstepcounter{lesson} \hfill}{\endgroup}
-\newcommand{\Sec}[1]{\ul{\textbf{#1}}}
+\newenvironment{lessondate}[1][]{\begingroup \date{#1} \refstepcounter{lesson} \hfill}{\endgroup}
+\newcommand{\Topic}[1]{\ul{\textbf{#1}}}
+\newcommand{\Mathematica}[3]{\includegraphics{graphs/#1/gr_gr#2.eps}
+\begin{center}\includegraphics[scale=0.7]{graphs/#1/gr_gr#3.eps}\end{center}}
 
 \newcounter{lesson}
 \newcounter{statement}[lesson]
 
+\RequirePackage{tcolorbox}
 \definecolor{blue}{rgb}{0.2, 0.2, 0.6}
 \newenvironment{theorem}[1][Theorem]{\begingroup \refstepcounter{statement} \begin{trivlist} \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries \thelesson .\thestatement.}]}{\end{trivlist}\endgroup}
 \newenvironment{lemma}[1][Lemma]{\begingroup \refstepcounter{statement} \begin{trivlist} \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries \thelesson .\thestatement.}]}{\end{trivlist}\endgroup}
@@ -73,8 +91,13 @@
 \newenvironment{reflection}[1][Reflection]{\begingroup \refstepcounter{statement} \begin{trivlist} \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries \thelesson .\thestatement.}]}{\end{trivlist}\endgroup}
 \newenvironment{proposition}[1][Proposition]{\begingroup \refstepcounter{statement} \begin{trivlist} \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries \thelesson .\thestatement.}]}{\end{trivlist}\endgroup}
 \newenvironment{corollary}[1][Corollary]{\begingroup \refstepcounter{statement} \begin{trivlist} \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries \thelesson .\thestatement.}]}{\end{trivlist}\endgroup}
-\newenvironment{defn}[1][Definition]{\begingroup \refstepcounter{statement} \color{blue} \begin{trivlist}
-\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries \thelesson .\thestatement.}]}{\end{trivlist}\endgroup}
+%\newenvironment{defn}[1][Definition]{\begingroup \refstepcounter{statement} \color{blue} \begin{trivlist}
+%\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries \thelesson .\thestatement.}]}{\end{trivlist}\endgroup}
+
+\newenvironment{defn}[2][Definition]{\begingroup \refstepcounter{statement}
+\begin{tcolorbox}[colframe=blue!80!white,colback=blue!5!white,title=  {\bfseries #1 \thelesson .\thestatement. (#2)},sharpish corners]
+}{\end{tcolorbox}\endgroup}
+
 \newenvironment{proof}{\textit{Proof:}}{\hfill$\square$}
 
 \setlength\parindent{0pt}
