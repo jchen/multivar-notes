@@ -1,0 +1,199 @@
+% !TEX root = ../multivar-notes.tex
+\lessondate{February 21, 2019}
+
+\ul{\textbf{Test 1 Review}}
+
+\begin{enumerate}[1.]
+  \item Consider the function
+  \[f(x)=\frac{x}{2}+x^2\sin \frac{1}{x}\]
+  Show whether it is possible to define $f(0)$ so that $f(x)$ is continuous everywhere.
+
+  \begin{proof}
+    Yes, we set $f(0) = 0$. The limit exists as $\lim_{x\to 0} x^2\sin\frac{1}{x}=0$, as $x^2$ tends to $0$ and $\sin\frac{1}{x}$ is wholly bounded.
+  \end{proof}
+
+  \item Show that any finite union of compact sets is compact. Give a counterexample to show that an infinite union of compact sets does not need to be compact. ***
+
+  \item ***
+
+  \item ***
+\end{enumerate}
+
+\Topic{Tangent Spaces}
+
+As we saw, a $k$-manifold in $\R^n$ can be thought of as the solution to an equation $F(x)=0$ or the image of a parametrization $\gamma : \R^k \to \R^{n}$.
+
+Since both $F$ and $\gamma$ are assumed to be $C^1$, their derivatives give a local linear approximation of the manifold which we call the ``tangent space''.
+
+The linear equivalent of ``$F(x)=0$'' is $ker[\bm{D}F(x)]$, and the linear equivalent of ``$im\ \gamma(u)$'' is ``$im[\bm{D}\gamma(u)]$''.
+
+\example Tangent spaces to the unit circle
+\begin{enumerate}[1.]
+\item
+\begin{minipage}{0.7\textwidth}
+\[F\Point{x \\ y}=x^2+y^2-1\]
+\[\bm{D}F\Point{x \\ y}=\mtrx{2x & 2y}\]
+\[ker\mtrx{2x & 2y} = \Set{\mtrx{\dot{x} \\ \dot{y}}\in \R^2 \bigm| \mtrx{2x & 2y}\mtrx{\dot{x} \\ \dot{y}}=0}\]
+\end{minipage}
+\begin{minipage}{0.3\textwidth}
+If $\Point{x \\ y} = \Point{1 \\ 0}$,
+\begin{align*}
+  \mtrx{2 & 0}\mtrx{\dot{x} \\ \dot{y}} &= 0 \\
+  \implies 2\dot{x} &= 0 \\
+  \implies \dot{x} &= 0
+\end{align*}
+\end{minipage}
+
+\begin{center}
+\begin{tikzpicture}
+\newcommand{\myangle}{0}
+\tkzInit[xmin=-2,xmax=2,xstep=1,ymin=-2,ymax=2,ystep=1]
+\tkzDrawX \tkzDrawY
+\tkzDefPoint(0,0){c}
+\tkzDefPoint(1,1){a0}
+\tkzRadius=1 cm
+\tkzDrawCircle[R,thick,color=Cerulean](c,\tkzRadius)
+\tkzDefPointBy[rotation=center c angle \myangle](a0)
+\tkzGetPoint{a}
+\tkzTangent[from with R = a](c,\tkzRadius)
+\tkzGetPoints{e}{f}
+\tkzDrawLine[add = 1 and 2,color=OrangeRed,thick](a,f)
+\tkzDrawSegment(c,f)
+\tkzDrawPoints[size=3,fill](f,c)
+\end{tikzpicture}
+\end{center}
+
+The \ul{tangent line} will be the kernel of $\bm{D}F$ w.r.t the $x$-$y$-coordinate system:
+\[\boxed{x-1=0}\]
+
+If $\Point{x \\ y} = \Point{\sqrt{\frac{1}{2}} \\ \sqrt{\frac{1}{2}}}$, then $ker \bm{D}F = ker\mtrx{\sqrt{2} & \sqrt{2}}$, so we solve
+\begin{align*}
+\sqrt{2}\dot{x}+\sqrt{2}\dot{y}&=0 \\
+\dot{y}&=-\dot{x} & \text{(tangent space)} \\
+(y-\sqrt{\frac{1}{2}}) &=-(x-\sqrt{\frac{1}{2}}) & \text{(tangent line)}
+\end{align*}
+
+\begin{center}
+\begin{tikzpicture}
+\newcommand{\myangle}{45}
+\tkzInit[xmin=-2,xmax=2,xstep=1,ymin=-2,ymax=2,ystep=1]
+\tkzDrawX \tkzDrawY
+\tkzDefPoint(0,0){c}
+\tkzDefPoint(1,1){a0}
+\tkzRadius=1 cm
+\tkzDrawCircle[R,thick,color=Cerulean](c,\tkzRadius)
+\tkzDefPointBy[rotation=center c angle \myangle](a0)
+\tkzGetPoint{a}
+\tkzTangent[from with R = a](c,\tkzRadius)
+\tkzGetPoints{e}{f}
+\tkzDrawLine[add = 1 and 2,color=OrangeRed,thick](a,f)
+\tkzDrawSegment(c,f)
+\tkzDrawPoints[size=3,fill](f,c)
+\end{tikzpicture}
+\end{center}
+
+
+In general, for $\Point{x \\ y}$ on the circle, the tangent space to the circle at point $\Point{x \\ y}$ is given by
+\[ker\mtrx{2x & 2y}\]
+\[=\Set{\mtrx{\dot{x} \\ \dot{y}} \bigm| x\dot{x}+y\dot{y}=0}\]
+
+\item A parametrization of the unit circle is given by
+\[\gamma(t)=\Point{\cos t \\ \sin t},t\in (0,2\pi)\]
+\[\bm{D}\gamma(t)=\mtrx{-\sin t \\ \cos t}\]
+Each $t\in(0,2\pi)$ gives a point on the circle with the tangent space spanned by $\mtrx{-\sin t \\ \cos t}$.
+
+$t=0 : \bm{D}\gamma(0)=\mtrx{0 \\ 1}$
+
+\begin{center}
+\begin{tikzpicture}
+\newcommand{\myangle}{0}
+\tkzInit[xmin=-2,xmax=2,xstep=1,ymin=-2,ymax=2,ystep=1]
+\tkzDrawX \tkzDrawY
+\tkzDefPoint(0,0){c}
+\tkzDefPoint(1,1){a0}
+\tkzRadius=1 cm
+\tkzDrawCircle[R,thick,color=Cerulean](c,\tkzRadius)
+\tkzDefPointBy[rotation=center c angle \myangle](a0)
+\tkzGetPoint{a}
+\tkzTangent[from with R = a](c,\tkzRadius)
+\tkzGetPoints{e}{f}
+\tkzDrawLine[add = 1 and 2,color=OrangeRed,thick](a,f)
+\tkzDrawSegment(c,f)
+\tkzDrawPoints[size=3,fill](f,c)
+\end{tikzpicture}
+\end{center}
+
+$\displaystyle t=\frac{\pi}{4} : [\bm{D}\gamma(\frac{\pi}{4})]=\mtrx{-\frac{\sqrt{2}}{2} \\ \frac{\sqrt{2}}{2}}$
+
+$\qquad \implies span\System{\mtrx{-\frac{\sqrt{2}}{2} \\ \frac{\sqrt{2}}{2}}}=span\System{\mtrx{-1 \\ 1}}$
+
+\begin{center}
+\begin{tikzpicture}
+\newcommand{\myangle}{45}
+\tkzInit[xmin=-2,xmax=2,xstep=1,ymin=-2,ymax=2,ystep=1]
+\tkzDrawX \tkzDrawY
+\tkzDefPoint(0,0){c}
+\tkzDefPoint(1,1){a0}
+\tkzRadius=1 cm
+\tkzDrawCircle[R,thick,color=Cerulean](c,\tkzRadius)
+\tkzDefPointBy[rotation=center c angle \myangle](a0)
+\tkzGetPoint{a}
+\tkzTangent[from with R = a](c,\tkzRadius)
+\tkzGetPoints{e}{f}
+\tkzDrawLine[add = 1 and 2,color=OrangeRed,thick](a,f)
+\tkzDrawSegment(c,f)
+\tkzDrawPoints[size=3,fill](f,c)
+\end{tikzpicture}
+\end{center}
+
+\end{enumerate}
+
+\begin{defn}{Tangent space to a manifold}
+***
+\end{defn}
+
+\begin{theorem}
+  \textbf{(Tangent space to a manifold given by equations).} If $\bm{F}(z)=\bm{0}$ describes ***
+\end{theorem}
+
+\begin{proposition}
+  \textbf{(Tangent space of a manifold given by parametrization).} ***
+\end{proposition}
+
+\exercise{3.2.4}
+For each of the following functions $f$ and points $\Point{a \\ b}$, state whether there is a tangent plane to the graph of $f$ at the point $\Point{a \\ b \\ f\Point{a \\ b}}$. If there is such a tangent plane, find its equation, and compute the intersection of the tangent plane with the graph.
+
+\begin{enumerate}[a.]
+  \item $\displaystyle f\Point{x \\ y} = x^2 - y^2$ at $\Point{1 \\ 1}$
+
+\Mathematica{20190221}{13}{14}
+
+  The graph of $z=f\Point{x \\ y}$ is parametrized by
+  \[\gamma\Point{u \\ v}=\Point{u \\ v \\ f(u,v)}=\Point{u \\ v \\ u^2-v^2}\]
+  \[\bm{D}\gamma\Point{u \\ y}=\mtrx{1 & 0 \\ 0 & 1 \\ 2u & -2v}\]
+  \[\bm{D}\gamma\Point{1 \\ 1}=\mtrx{1 & 0 \\ 0 & 1 \\ 2 & -2}\]
+  \[\left[im\ \bm{D}\gamma\Point{1 \\ 1}\right] = \Set{\Point{\dot{x} \\ \dot{y} \\ \dot{z}} \bigm| \dot{x} = s, \dot{y} = t, \dot{z}=2s-2t}\]
+  \[tangent\ plane = \Set{\Point{\dot{x} \\ \dot{y} \\ \dot{z}} \bigm| \dot{x} = 1 + s, \dot{y} = 1 + t, \dot{z}=2s-2t}\]
+
+  We can check this using ***
+  
+  This is the tangent plane graphed: 
+  
+  \Mathematica{20190221}{15}{16}
+
+  \item $\displaystyle f\Point{x \\ y} = \sqrt{x^2+y^2}$ at $\Point{0 \\ 0}$
+  
+  \Mathematica{20190221}{17}{18}
+  \[F\Point{x \\ y \\ z} = z^2 - x^2 - y^2 = 0\]
+  \[\mtrx{\bm{D}F\Point{x \\ y \\ z}}=\mtrx{-2x & -2y & 2z}\]
+  \[\mtrx{\bm{D}F\Point{0 \\ 0 \\ 0}}=\mtrx{0 & 0 & 0}\]
+  Evidently, this matrix is not onto so there does not exist a tangent plane at point $\Point{0 \\ 0 \\ 0}$.
+
+  \item Same function as above but at point $\Point{1 \\ -1}$
+
+  \[\mtrx{\bm{D}F\Point{x \\ y \\ z}}=\mtrx{-2x & -2y & 2z}\]
+  \[\mtrx{\bm{D}F\Point{1 \\ -1 \\ \sqrt{2}}}=\mtrx{-2 & 2 & 2\sqrt{2}}\]
+  \[ker \mtrx{\bm{D}F\Point{1 \\ -1 \\ \sqrt{2}}}=\Set{\Point{\dot{x} \\ \dot{y} \\ \dot{z}} \bigm| -2\dot{x} +2\dot{y} +2\sqrt{2}\dot{z}=0}\]
+  \[tangent\ plane : -x + y + \sqrt{2}z = 0\]
+
+\end{enumerate}
