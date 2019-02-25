@@ -1,0 +1,63 @@
+% !TEX root = ../multivar-notes.tex
+\lessondate{February 25, 2019}
+
+\exercise{1.8.9} Let $\varphi : \R \to \R$ be any differentiable function. Show that the function
+\[f\Point{x \\ y} = y\varphi (x^2-y^2)\]
+satisfies the equation
+\[\frac{1}{x}D_1f\Point{x \\ y}+\frac{1}{y}D_2f\Point{x \\ y}=\frac{1}{y^2}f\Point{x \\ y}\]
+
+\begin{proof}
+  \begin{align*}
+  D_1 &= 2xy\varphi'(x^2-y^2) \\
+  D_2 &= \varphi(x^2-y^2) + 2y^2 \varphi'(x^2-y^2)
+\end{align*}
+***
+ \end{proof}
+
+\exercise{1.34} Consider the function defined in $\R^2$ and given by the formula.
+\[f\Point{x \\ y} = \begin{cases}
+\displaystyle \frac{xy}{x^2+y^2} &\text{if } \Point{x \\ y}\neq \Point{0 \\ 0} \\
+0 &\text{if } \Point{x \\ y}\neq \Point{0 \\ 0}
+\end{cases}\]
+\begin{enumerate}[a.]
+  \item Show that both partial derivatives exist everywhere.
+
+  \begin{proof}
+    Because $f$ is a symmetric function, and $x$ and $y$ are interchangeable, it suffices to merely calculate one partial derivative. This is the partial derivative for $x,y\neq 0$
+    \[D_xf\Point{x \\ y} = \frac{(x^2+y^2)(1)-(xy)(2x)}{(x^2+y^2)^2} = \frac{x^2+y^2-2x^2y}{x^4+2x^2y^2+y^4}\]
+    The partial derivative at $(0,0)$ is
+    \[\lim_{h\to 0} \frac{f\Point{0 + h \\ 0} - f\Point{0 \\ 0}}{h} = \lim_{h\to 0} \frac{0 - 0}{h} = 0\]
+    Thus the partial derivatives exist everywhere.
+  \end{proof}
+
+  \item Where is $f$ differentiable?
+  $f$ is not continuous.
+  \[\lim_{y=0, x\to 0} f\Point{x \\ y} = 0 \qquad \lim_{x=y \to 0}f\Point{x \\ y} = \frac{1}{2} \quad \Rightarrow\!\Leftarrow !\]
+\end{enumerate}
+
+\exercise{2.10.15} \begin{enumerate}[a.]
+  \item Show that the mapping $F\Point{x \\ y}=\Point{e^x+e^y \\ e^x+e^{-y}}$ is locally invertible at every point $\Point{x \\ y}\in \R^2$.
+
+  \begin{proof}
+    By the Inverse Function Theorem *** (14.1), $F$ is locally invertible at $\bm{x} = \Point{x \\ y}$ if it derivative is invertible at $\bm{x}$. $[JF(\bm{x})]$ ***
+  \end{proof}
+
+  \item If $F(\bm{a})=\bm{b}$, what is the derivative of $F^{-1}$ at $\bm{b}$
+\end{enumerate}
+
+\exercise{2.31} \begin{enumerate}[a.]
+\item True or false? The equation $\sin (xyz)=z$ expresses $x$ implicitly as a differentiable function of $y$ an $z$ near the point $\Point{x \\ y \\ z} = \Point{\pi/2 \\ 1 \\ 1}$.
+
+\begin{proof}
+  \[f\Point{x \\ y \\ z} = \sin (xyz) - z\]
+  \[Df\Point{x \\ y \\ z} = \mtrx{yz\cos(xyz) & xz\cos(xyz) & xy\cos(xyz)-1} = \mtrx{0 & 0 & -1}\]
+  Because the $x$ column is non-pivotal, this is false.
+\end{proof}
+
+\item True or false? $z$ can be expressed implicitly as a differentiable function of $x$ and $y$ near the same point of the same function.
+
+\begin{proof}
+  The third column, the $z$ column, is pivotal, so $z$ can be expressed as a function of $x$ and $y$. 
+\end{proof}
+
+\end{enumerate}
