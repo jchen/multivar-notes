@@ -44,7 +44,7 @@
 \RequirePackage{enumerate}
 \RequirePackage{soul}
 \RequirePackage{parskip}
-% \RequirePackage{listings}
+\RequirePackage{framed}
 \RequirePackage{xcolor}
 
 \newcommand{\bm}{\textbf}
@@ -97,9 +97,21 @@
 %\newenvironment{defn}[1][Definition]{\begingroup \refstepcounter{statement} \color{blue} \begin{trivlist}
 %\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries \thelesson .\thestatement.}]}{\end{trivlist}\endgroup}
 
-\newenvironment{defn}[2][Definition]{\begingroup \begin{changemargin}{0in}{0in}\refstepcounter{statement}
-\begin{tcolorbox}[colframe=blue,colback=Emerald!10!white,title=  {\bfseries #1 \thelesson .\thestatement. (#2)}]\color{blue}
-}{\end{tcolorbox}\end{changemargin}\endgroup}
+\renewenvironment{leftbar}[1][\hsize]
+{%
+    \def\FrameCommand
+    {%
+        {\color{blue}\vrule width 2pt}%
+        \hspace{0pt}%must no space.
+        \fboxsep=\FrameSep\colorbox{Emerald!5!white}%
+    }%
+    \MakeFramed{\hsize#1\advance\hsize-\width\FrameRestore}%
+}
+{\endMakeFramed}
+
+\newenvironment{defn}[2][Definition]{\begingroup\refstepcounter{statement}
+\color{blue} \leftbar{\bfseries #1 \thelesson .\thestatement. (#2). }
+}{\endleftbar \endgroup}
 
 \newenvironment{proof}{\textit{Proof:}}{\hfill$\square$}
 
