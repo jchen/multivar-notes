@@ -1,34 +1,35 @@
 % !TEX root = ../multivar-notes.tex
-\lessondate{January 28, 2019}\\
+\lessondate{January 28, 2019}
 
 \begin{proposition}
-\textbf{(***)}
+If $U\subset \R^n$ is open, and $\bm{f}:U\to\R^m$ is differentiable at $\bm{a}\in U$, then all directional derivatives of $\bm{f}$ at $\bm{a}$ exist, and the directional derivative in the direction $\vec{\bm{v}}$ is given by the formula
+
+\[[\bm{Df} (\bm{a})]\vec{\bm{v}} = \lim_{h\to 0}\frac{\bm{f}(\bm{a}+h\vec{\bm{v}})-\bm{f}(\bm{a})}{h}\]
 \end{proposition}
 
 \begin{proof}
-  Recall that the expression
-  \[\bm{r}(\vec{\bm{h}})=\left(\bm{f}(\bm{a}+\vec{\bm{h}})-\bm{f}(\bm{a})\right)-[\bm{Df}(\bm{a})]\vec{\bm{h}}\]
-  ***
-\end{proof}
+  \textit{Datailed in textbook p.130 (Proposition 1.7.14)}\end{proof}
 
 \ul{\textbf{Rules for calculating derivatives}}
 
-(A lot of them are surprisingly similar)
+(A lot of them are surprisingly similar to what we're used to seeing in Calculus BC.)
 \begin{enumerate}[1.]
   \item If $\bm{f} : U \to \R^m$ is a constant function, then $\bm{f}$ is differentiable, and its derivative is $[0]$.
-  \item If $\bm{f} : \R^n \to \R^m$ is linear, then it is differentiable everywhere, and its derivative at all points $\bm{a}$ is $\bm{f}$, \textit{i.e.}, ***
-  \item (differentiable just take singular derivative)
-  \item sum
-  \item product
-  \item quotient rule
-  \item composition
+  \item If $\bm{f} : \R^n \to \R^m$ is linear, then it is differentiable everywhere, and its derivative at all points $\bm{a}$ is $\bm{f}$, \textit{i.e.}, $[\bm{Df}(\bm{a})]\vec{\bm{v}}=\bm{f}(\bm{v})$. 
+  \item If $f_1, \dots, f_m : U \to \R$ are $m$ scalar valued functions differentiable at $\bm{a}$, then so is $\bm{f}=\Point{f_1 \\ \vdots \\ f_m}$ with derivative
+  \[[\bm{Df}(\bm{a})]\vec{\bm{v}}=\mtrx{[\bm{D}f_1(\bm{a})]\vec{\bm{v}} \\ \vdots \\ [\bm{D}f_m(\bm{a})]\vec{\bm{v}}}\]
+  The same applies the other direction, if $\bm{f}$ is differentiable with derivative $[\bm{Df}(\bm{a})]$, then its coordinate components $f_i$ are the $i$th row of the entire derivative matrix. 
+  \item Given differentiable $\bm{f}, \bm{g}$ at $\bm{a}$, then
+  \[[\bm{D}(\bm{f}+\bm{g})(\bm{a})] = [\bm{D}\bm{f}(\bm{a})]+[\bm{D}\bm{g}(\bm{a})]\]
+  \item Given differentiable $f : U\to \R, \bm{g} : U\to \R^m$ at $\bm{a}$, then 
+  \[[\bm{D}(f\bm{g})(\bm{a})]\vec{\bm{v}} = \underbrace{f(\bm{a})}_{\R} \underbrace{[\bm{D}\bm{g}(\bm{a})]\vec{\bm{v}}}_{\R^m}+\underbrace{([\bm{D}f(\bm{a})]\vec{\bm{v}})}_{\R}\underbrace{\bm{g}(\bm{a})}_{\R^m}\]
+  \item Some variant of the quotient rule. This is too complicated\dots (see textbook p.138)
+  \item Given differentiable $\bm{f} : U\to \R^m, \bm{g} : U\to \R^m$ at $\bm{a}$, then 
+  \[[\bm{D}(\bm{f}\cdot\bm{g})(\bm{a})]\vec{\bm{v}} = \underbrace{\bm{f}(\bm{a})}_{\R^m} \cdot \underbrace{[\bm{D}\bm{g}(\bm{a})]\vec{\bm{v}}}_{\R^m}+\underbrace{[\bm{D}\bm{f}(\bm{a})]\vec{\bm{v}}}_{\R^m}\cdot \underbrace{\bm{g}(\bm{a})}_{\R^m}\]
+
 \end{enumerate}
 
 \begin{theorem}
   \textbf{(Chain rule).} Let $U\subset \R^n$, $V\subset \R^m$ be open sets, let $\bm{g} : U \to V$ and $\bm{f} : V \to \R^p$ be mappings, and let $\bm{a}$ be a point of $U$. If $\bm{g}$ is differentiable at $\bm{a}$ and $\bm{f}$ is differentiable at $\bm{g}(\bm{a})$, then the composition $\bm{f} \circ \bm{g}$ is differentiable at $\bm{a}$, and its derivative is given by
   \[\bm{D}[(\bm{f}\circ \bm{g})(\bm{a})]=[\bm{Df} (\bm{g}(\bm{a}))]\circ [\bm{Dg}(\bm{a})]\]
 \end{theorem}
-
-\example
-\textbf{(The derivative of a composition).} Define $\bm{g} : \R \to \R^3$ and $f : \R^3 \to \R$
-\[f\Point{x \\ y \\ z}=x^2+y^2+z^2;\qquad \bm{g}(t)=\Point{t \\ t^2 \\ t^3}\]
