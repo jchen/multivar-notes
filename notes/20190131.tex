@@ -1,25 +1,29 @@
 % !TEX root = ../multivar-notes.tex
-\lessondate{January 31, 2019}\\
+\lessondate{January 31, 2019}
 
 Recall
-\exercise{1.9.2a}
+\exercise{1.9.2 a}
   Show that for
   \[f\Point{x \\ y} = \begin{cases}
   \displaystyle \frac{3x^2y - y^3}{x^2+y^2} & \text{if } \Point{x \\ y} \neq \Point{0 \\ 0} \\
   0 & \text{if } \Point{x \\ y} = \Point{0 \\ 0}
   \end{cases}\]
   all directional derivaties exist, but that $f$ is not differentiable at the origin.
+  
 \begin{proof}
 \begin{align*}
   D_xf\Point{0 \\ 0} &= \lim_{h\to 0} \frac{f\Point{0 + h \\ 0}-0}{h} \\
-  &= \lim_{h\to 0}\frac{3h^2\cdot 0 - 0^3}{h(h^2+0^2)}=0\\
-  D_yf\Point{0 \\ 0} &= \lim_{h\to 0} \frac{0-h^3}{h(0^2+h^2)}=1
+  &= \lim_{h\to 0}\frac{3h^2\cdot 0 - 0^3}{h(h^2+0^2)}=0\\[12pt]
+  D_yf\Point{0 \\ 0} &= \lim_{h\to 0} \frac{f\Point{0 \\ 0+h}-0}{h} \\
+&= \lim_{h\to 0} \frac{0-h^3}{h(0^2+h^2)}=-1
 \end{align*}
 \[\bm{Jf}\Point{0 \\ 0} = \mtrx{0 & -1}\]
 \[\vec{v}=\mtrx{v_1 \\ v_2}\qquad \lim_{h\to 0}\frac{f(0+h\vec{v})-f(0)}{h}=\lim_{h\to 0}\frac{3h^2v_1^2hv_2-h^3v_2^2}{h(h^2v_1+h^2 v_2^2)}=\frac{3v_1^2v_2-v_2^3}{v_1^2+v_2^2}\]
 \[\Rightarrow \text{ all directional derivatives exist}\]
 If $f$ is differentiable, the directional derivative is $\left[\bm{Jf}\Point{0 \\ 0}\right]\vec{v}=-v_2$, so setting $\vec{v}=\mtrx{1 \\ 1}$ gives a contradiction, hence $f\Point{x \\ y}$ is not differentiable at the origin.
 \end{proof}
+
+The digest of the above proof is that the Jacobian matrix was first calculated using the limit definition of the partial derivatives. Then the directional derivative was calculated using the definition of the directional derivative. In this process, a contradiction was achieved by showing that $[\bm{Jf}(\bm{a})]\vec{\bm{v}}=[\bm{Df}(\bm{a})]\vec{\bm{v}}\neq \lim_{h\to 0}\frac{f(0+h\vec{v})-f(0)}{h}$, violating \textbf{Proposition 10.1}. 
 
 \exercise{1.9.2b}
 Show that
@@ -30,8 +34,13 @@ Show that
 has directional derivatives at every point but is not continuous.
 
 \begin{proof}
-  ***
+  The directional derivative is given by: 
   \[\vec{v}=\mtrx{v_1 \\ v_2}\qquad \lim_{h\to 0}\frac{g(0+h\vec{v})-g(0)}{h}=\lim_{h\to 0} \frac{h^2v_1^2\cdot hv_2}{h(h^4v_1^4 + h^2 v_2^2)}=\lim_{h\to 0} \frac{v_1^2 v_2}{h^2v_1^4 + v_2^2}=\frac{v_1^2}{v_2}\]
+  Yet $g\Point{0 \\ 0}\neq \lim_{\bm{x}\to (0,0)}g(\bm{x})$. In fact, the limit does not exist. Approaching the limit from $y=0$ gives
+  \[\lim_{x\to 0}\frac{x^2\cdot 0}{x^4+0^2}=\lim_{x\to 0}\frac{0}{x^4}=0\]
+  But approaching the limit from $y=x^2$ gives
+  \[\lim_{y = x^2\to 0}\frac{x^2\cdot x^2}{x^4+(x^2)^2}=\lim_{x\to 0}\frac{x^4}{2x^4  }=\frac{1}{2} \qquad \Rightarrow\!\Leftarrow!\]
+  
 \end{proof}
 
 \exercise{1.9.2c}
@@ -40,7 +49,11 @@ Show that
 \displaystyle \frac{x^2 y}{x^6+y^2} & \text{if } \Point{x \\ y} \neq \Point{0 \\ 0} \\
 0 & \text{if } \Point{x \\ y} = \Point{0 \\ 0}
 \end{cases}\]
-***.
+has directional derivatives at every point but is not bounded in a neighborhood of $\bm{0}$. 
+
+\begin{proof}
+	***
+\end{proof}
 
 \exercise{1.8.11}
 Show that if $\displaystyle f\Point{x \\ y}=\varphi\System{\frac{x+y}{x-y}}$ for some differentiable function $\varphi : \R \mapsto \R$, then
