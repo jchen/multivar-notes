@@ -1,0 +1,62 @@
+% !TEX root = ../multivar-notes.tex
+\lessondate{March 2, 2019}
+
+\Topic{Optimization}
+
+Recall the Taylor polynomial at $x=0$: 
+\[f(x)\approx \frac{f(0)}{0!} + \frac{f'(0)}{1!}x + \frac{f''(0)}{2!}x^2+\cdots\]
+And in general the Taylor polynomial at $x=a$: 
+\[f(x)\approx \frac{f(a)}{a!} + \frac{f'(a)}{1!}(x-a) + \frac{f''(a)}{2!}(x-a)^2+\cdots\]
+If $f'(a)=0$, the behavior of $f$ near $a$ is determined by the quadratic term (if $f''(a)\neq 0$)
+
+For a function $f : \R^2 \to \R$, if $f$ is at least $C^2$, we can write at $\Point{x \\ y} = \Point{0 \\ 0}$: 
+
+\begin{multline*}
+	f\Point{x \\ y} \approx \underbrace{f\Point{0 \\ 0}}_{\text{absolute term}} + \underbrace{D_xf\Point{0 \\ 0}x + D_y\Point{0 \\ 0}y}_{\text{linear term}} \\ 
+	+ \frac{1}{2!}\underbrace{\left(D_{xx}f\Point{0 \\ 0}x^2 + D_{xy}f\Point{0 \\ 0}xy + D_{yx}f\Point{0 \\ 0} xy + D_{yx}f\Point{0 \\ 0}yx + D_{yy}f\Point{0 \\ 0}y^2\right)}_{\text{quadratic term}} \\
+	=f\Point{0 \\ 0} + \mtrx{Df\Point{0 \\ 0}}\mtrx{x \\ y} + \frac{1}{2!}\mtrx{x & y}\underbrace{\mtrx{D_{xx}f\Point{0 \\ 0} & D_{xy}f\Point{0 \\ 0} \\ D_{yx}f\Point{0 \\ 0} & D_{yy}f\Point{0 \\ 0}}}_{\mtrx{Hf\Point{0 \\ 0}}\text{ (Hessian matrix)}}\mtrx{x \\ y}
+\end{multline*}
+
+In turns out that in higher order partials, the order of differentiation does not matter: 
+\[D_{xy}f=D_{yx}f\quad \text{wherever they exist}\]
+\begin{align*}
+	f\Point{x \\ y} &= x^2\cdot \sin(x_y^2) \\
+	D_xf\Point{x \\ y} &= 2x \cdot \cos(x+y^2)\cdot 2y -x^2\sin(x+y^2)\cdot 2y \\
+	&= 4xy\cos(x+y^2)-2x^2y\sin(x + y^2) \\
+	D_yf\Point{x \\ y}&=2x^2y\cdot \cos(x +y^2) \\
+	D_{yx}f\Point{x \\ y} &= 2y (2x\cdot \cos(x+y^2)-x^2\sin(x+y^2))
+\end{align*}
+
+If $Hf\Point{a \\ b}$ is positive definite: $f\Point{x \\ y}\approx \lambda_1x^2 + \lambda_2y^2$ for $\lambda_{1,2}>0$, then $\Point{a \\ b}$ is a local minimum. 
+
+If $Hf\Point{a \\ b}$ is negative definite, $\Point{a \\ b}$ is a local max. 
+
+If $Hf\Point{a \\ b}$ is indefinite, we have a ``saddle point'' at $\Point{a \\ b}$. 
+
+For semi-definite matrixes $Hf\Point{a \\ b}$, we get local mins/max, but they may not be unique. 
+
+\exercise{3.6.1} \begin{enumerate}[a.]
+	\item Show that $f\Point{x \\ y \\ z}=x^2+xy+z^2-\cos y$ has a critical point at the origin. 
+	
+	We calculate the Jacobian $[Jf\Point{\vec{\bm{v}}}]=\mtrx{2x+y & x+\sin(y) & 2z}$. The second partials are: 
+	\begin{align*}
+		D_x &= 2x + y \\ 
+		D_y &= x+\sin(y) \\
+		D_z &= 2z
+		D_{xy} &= 1 \\
+		D_{yz} &= 0 \\
+		D_{xz} &= 0
+		D_{xx} &= 2 \\
+		D_{yy} &= \cos(y) \\
+		D_{zz} &= 2	
+		\end{align*}
+	
+	\begin{align*}
+	f\Point{x \\ y \\ z} &\approx f\Point{0 \\ 0 \\ 0} + \mtrx{Df\Point{0 \\ 0 \\ 0}\mtrx{x \\ y \\ z} + \mtrx{x & y & z}\mtrx{Hf\Point{0 \\ 0 \\ 0}\mtrx{x \\ y \\ z}} \\
+	&= -1 + \mtrx{x & y & z}\mtrx{2 & 1 & 0 \\ 1 & 1 & 0 \\ 0 & 0 & 2}\mtrx{x \\ y \\ z} \\
+	&= -1+2x^2+2xy+y^2+2z^2 \\
+	&= -1 + x^2 + x^2 + 2xy + y^2 + 2z^2 \\
+	&= -1 + x^2 + (x+y)^2 + 2z^2
+	\end{align*}
+
+\end{enumerate}
