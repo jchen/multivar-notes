@@ -1,5 +1,5 @@
 % !TEX root = ../multivar-notes.tex
-\lessondate{February 26, 2019}
+\subsubsection*{February 26, 2019}
 
 \exercise{3.2.6}
 \begin{enumerate}
@@ -13,7 +13,7 @@ F_1 &= x_1^2+x_2^2-x_3^2-x_4^2 \\
 F_2 &= x_1+2x_2+3x_3+4x_4 -4
 \end{align*}
 \[F\Point{x_1 \\ x_2 \\ x_3 \\ x_4}=\Point{x_1^2+x_2^2-x_3^2-x_4^2 \\ x_1+2x_2+3x_3+4x_4 -4} = \Point{0 \\ 0}\]
-\[\bm{D}F\Point{x_1 \\ x_2 \\ x_3 \\ x_4} = \mtrx{2x_1 & 2x_2 & 2x_3 & 2x_4 \\ 1 & 2 & 3 & 4}\]
+\[\bm{D}F\Point{x_1 \\ x_2 \\ x_3 \\ x_4} = \mtrx{2x_1 & 2x_2 & -2x_3 & -2x_4 \\ 1 & 2 & 3 & 4}\]
 \[\bm{D}F\Point{1 \\ 0 \\ 1 \\ 0} = \mtrx{2 & 0 & -2 & 0 \\ 1 & 2 & 3 & 4}\]
 Which are linearly independent, which shows that this is onto, and so it is a smooth manifold locally at $\Point{1 \\ 0 \\ 1 \\ 0}$. 
 \end{proof}
@@ -31,7 +31,7 @@ Which are linearly independent, which shows that this is onto, and so it is a sm
 
 \begin{proof}
 We attempt to find a counterexample, so we want all the columns of 
-\[\bm{D}F\Point{\vdots} = \mtrx{2x_1 & 2x_2 & 2x_3 & 2x_4 \\ 1 & 2 & 3 & 4}\]
+\[\bm{D}F\Point{\vdots} = \mtrx{2x_1 & 2x_2 & -2x_3 & -2x_4 \\ 1 & 2 & 3 & 4}\]
 to be linearly dependent, which means that
 \[\frac{x_1}{1}=\frac{x_2}{2}=\frac{-x_3}{3} = \frac{-x_4}{4}\]
 whilst still satisfying the original equation

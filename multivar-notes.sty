@@ -6,10 +6,11 @@
 \RequirePackage[utf8]{inputenc}
 \RequirePackage[english]{babel}
 \RequirePackage{amsmath}
+\RequirePackage{amsthm}
 \RequirePackage[T1]{fontenc}
 \RequirePackage{textcomp}
 \RequirePackage[utf8]{inputenc}
-\RequirePackage{amsfonts}
+%\RequirePackage{amsfonts}
 \RequirePackage{amssymb}
 \RequirePackage{pxfonts}
 % \RequirePackage{tgpagella}
@@ -22,22 +23,22 @@
 \RequirePackage{geometry}
 \geometry{ % defines page margins and spacing
   top=0.95in,
-  inner=1.2in,
-  outer=1.2in,
-  bottom=1.2in,
+  inner=1.3in,
+  outer=1.3in,
+  bottom=1.3in,
   headsep=2ex,
   foot=36pt}
 
 \RequirePackage[bottom]{footmisc}
 
 \RequirePackage{fancyhdr}
-\pagestyle{myheadings}
-\pagestyle{fancy}
+% \pagestyle{myheadings}
+% \pagestyle{fancy}
 \fancyhf{}
 \title{MA662 - Multivariable Calculus}
-\lhead{\small Jiahua Chen}
-\rhead{\small \@title}
-\cfoot{\small{\textsc{p. \thepage}}}
+% \lhead{\small Jiahua Chen}
+% \rhead{\small \@title}
+% \cfoot{\small{\textsc{p. \thepage}}}
 
 \RequirePackage{tkz-euclide,tikz}
 \usetkzobj{all}
@@ -75,27 +76,26 @@
 \newcommand{\createsystem}[2]{\ensuremath{\left(\Vec{#1_1},\dots,\Vec{#1_{#2}}\right)}}
 \newcommand{\answer}[1]{\textit{Answer: }\boxed{\text{#1}}}
 %\newcommand{\lessondate}[1]{\refstepcounter{lesson} \hfill #1}
-\newenvironment{lessondate}[1][]{\begingroup \date{#1} \refstepcounter{lesson} \hfill}{\endgroup}
+\newenvironment{lessondate}[1][]{\begingroup \date{#1} \hfill}{\endgroup}
 \newcommand{\Topic}[1]{\ul{\textbf{#1}}}
 \newcommand{\Mathematica}[3]{\includegraphics{graphs/#1/gr_gr#2.eps}
 \begin{center}\includegraphics[scale=0.7]{graphs/#1/gr_gr#3.eps}\end{center}}
 
-\newcounter{lesson}
-\newcounter{statement}[lesson]
+\newcounter{statement}[section]
 
 \RequirePackage{tcolorbox}
 \def\changemargin#1#2{\list{}{\rightmargin#2\leftmargin#1}\item[]}
 \let\endchangemargin=\endlist 
 \definecolor{blue}{rgb}{0.2, 0.2, 0.6}
-\newenvironment{theorem}[1][Theorem]{\begingroup \refstepcounter{statement} \begin{trivlist} \color{Maroon}\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries \thelesson .\thestatement.}]}{\end{trivlist}\endgroup}
-\newenvironment{lemma}[1][Lemma]{\begingroup \refstepcounter{statement} \begin{trivlist} \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries \thelesson .\thestatement.}]}{\end{trivlist}\endgroup}
+\newenvironment{theorem}[1][Theorem]{\begingroup \refstepcounter{statement} \begin{trivlist} \color{Maroon}\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries \thesection .\thestatement.}]}{\end{trivlist}\endgroup}
+\newenvironment{lemma}[1][Lemma]{\begingroup \refstepcounter{statement} \begin{trivlist} \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries \thesection .\thestatement.}]}{\end{trivlist}\endgroup}
 \newcommand{\exercise}[1]{\textbf{Exercise #1.}}
 % \newenvironment{exercise}[2][Exercise]{\begingroup \refstepcounter{statement} \begin{trivlist} \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}\endgroup}
-\newenvironment{reflection}[1][Reflection]{\begingroup \refstepcounter{statement} \begin{trivlist} \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries \thelesson .\thestatement.}]}{\end{trivlist}\endgroup}
-\newenvironment{proposition}[1][Proposition]{\begingroup \refstepcounter{statement} \begin{trivlist} \color{Maroon}\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries \thelesson .\thestatement.}]}{\end{trivlist}\endgroup}
-\newenvironment{corollary}[1][Corollary]{\begingroup \refstepcounter{statement} \begin{trivlist} \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries \thelesson .\thestatement.}]}{\end{trivlist}\endgroup}
+\newenvironment{reflection}[1][Reflection]{\begingroup \refstepcounter{statement} \begin{trivlist} \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries \thesection .\thestatement.}]}{\end{trivlist}\endgroup}
+\newenvironment{proposition}[1][Proposition]{\begingroup \refstepcounter{statement} \begin{trivlist} \color{Maroon}\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries \thesection .\thestatement.}]}{\end{trivlist}\endgroup}
+\newenvironment{corollary}[1][Corollary]{\begingroup \refstepcounter{statement} \begin{trivlist} \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries \thesection .\thestatement.}]}{\end{trivlist}\endgroup}
 %\newenvironment{defn}[1][Definition]{\begingroup \refstepcounter{statement} \color{blue} \begin{trivlist}
-%\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries \thelesson .\thestatement.}]}{\end{trivlist}\endgroup}
+%\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries \thesection .\thestatement.}]}{\end{trivlist}\endgroup}
 
 \renewenvironment{leftbar}[1][\hsize]
 {%
@@ -105,14 +105,27 @@
         \hspace{0pt}%must no space.
         \fboxsep=\FrameSep\colorbox{Emerald!5!white}%
     }%
-    \MakeFramed{\hsize#1\advance\hsize-\width\FrameRestore}%
+    \MakeFramed{\hsize#1}%
 }
 {\endMakeFramed}
 
 \newenvironment{defn}[2][Definition]{\begingroup\refstepcounter{statement}
-\color{blue} \leftbar{\bfseries #1 \thelesson .\thestatement. (#2). }
+\color{blue} \leftbar{\bfseries #1 \thesection .\thestatement. (#2).}
 }{\endleftbar \endgroup}
 
-\newenvironment{proof}{\textit{Proof:}}{\hfill$\square$}
+
+
+
+\theoremstyle{definition}
+\newtheorem*{rem}{Remark}
+
+\numberwithin{equation}{section}
+
+\RequirePackage{titlesec}
+\titleformat*{\subsubsection}{\bfseries\itshape}
+
+
+
+%\newenvironment{proof}{\textit{Proof:}}{\hfill$\square$}
 
 \setlength\parindent{0pt}

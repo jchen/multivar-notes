@@ -1,5 +1,5 @@
 % !TEX root = ../multivar-notes.tex
-\lessondate{January 22, 2019}
+\subsubsection*{January 22, 2019}
 
 \begin{theorem}
   \textbf{(Existence of minima and maxima).} Let $C\subset \R^n$ be a compact subset, and let $f : C\rightarrow \R$ be a continuous function. Then there exists a point $\bm{a}\in C$ such that $f(\bm{a})\geq f(\bm{x})$ for all $\bm{x}\in C$, and a point $\bm{b}\in C$ such that $f(\bm{b})\leq f(\bm{x})$ for all $\bm{x}\in C$.
@@ -10,14 +10,18 @@
 
 \begin{theorem}
 	  \textbf{(Mean value theorem).} If $f : [a,b] \rightarrow \R$ is continuous, and $f$ is differentiable on $(a,b)$, then there exists $c\in (a,b)$ such that
-  \[f'(c)=\frac{f(b)-f(a)}{b-a}\]
+  \begin{equation}
+  	f'(c)=\frac{f(b)-f(a)}{b-a}
+  \end{equation}
 \end{theorem}
 
 \emph{The below theorem naturally followed the \textbf{mean value theorem} as one of the five big theorems, but seems dissociated with the topics at hand. It's a nice thing to know though. }
 
 \begin{theorem}
 	  \textbf{(Fundamental theorem of algebra).} Let
-  \[p(z)=z^k+a_{k-1}z^{k-1}+\cdots + a_0\]
+  \begin{equation}
+  	p(z)=z^k+a_{k-1}z^{k-1}+\cdots + a_0
+  \end{equation}
   be a polynomial of degree $k > 0$ with complex coefficients (recall that real numbers are a subset of complex numbers). Then $p$ has a root: there exists a complex number $z_0$ such that $p(z_0)=0$. 
 \end{theorem}
 
@@ -29,18 +33,43 @@
 
 \hrule
 
-\newpage
-\textbf{\ul{Derivatives}} 
+\subsection{Topology Test Review}
+\subsubsection*{February 21, 2019}
 
-\textit{Idea:} Replace a complicated nonlinear equation by a linear one with the understanding that the results only hold approximately in a small neighborhood around a point $p\in \R^n$ but that the error vanishes faster than the distance to $p$.
-\[\lim_{h\rightarrow 0} \frac{f(x+h)-f(x)-f'(x)\cdot h}{h}=0\]
+\begin{enumerate}[1.]
+  \item Consider the function
+  \[f(x)=\frac{x}{2}+x^2\sin \frac{1}{x}\]
+  Show whether it is possible to define $f(0)$ so that $f(x)$ is continuous everywhere.
+
+  \begin{proof}
+    Yes, we set $f(0) = 0$. The limit exists as $\lim_{x\to 0} x^2\sin\frac{1}{x}=0$, as $x^2$ tends to $0$ and $\sin\frac{1}{x}$ is wholly bounded.
+  \end{proof}
+
+  \item Show that any finite union of compact sets is compact. Give a counterexample to show that an infinite union of compact sets does not need to be compact. ***
+
+  \item ***
+
+  \item ***
+\end{enumerate}
+
+\newpage
+\section{Derivatives}
+\subsection{Abstract}
+Replace a complicated nonlinear equation by a linear one with the understanding that the results only hold approximately in a small neighborhood around a point $p\in \R^n$ but that the error vanishes faster than the distance to $p$.
+\begin{equation}
+	\lim_{h\rightarrow 0} \frac{f(x+h)-f(x)-f'(x)\cdot h}{h}=0
+\end{equation}
 or formally: 
 \begin{defn}{Derivative}
 	Let $U$ be an open subset of $\R$, and let $f : U\to \R$ be a function. Then $f$ is \ul{differentiable} at $a\in U$ with \ul{derivative} $f'(a)$ if the limit
-\[f'(a)\overset{\mathrm{def}}{=}\lim_{h\rightarrow 0}\frac{1}{h}\left(f(a+h)-f(a)\right)\quad \text{exists}\]
+\begin{equation}
+	f'(a)\overset{\mathrm{def}}{=}\lim_{h\rightarrow 0}\frac{1}{h}\left(f(a+h)-f(a)\right)\quad \text{exists}
+\end{equation}
 \end{defn}
 For $f : \R^n \rightarrow \R^m$, we are looking for a function $\bm{Df}(\bm{x}_0)\in \mathcal{L}(\R^n,\R^m)$ such that
-\[\lim_{\vec{h}\rightarrow 0} \frac{\left\{f(\bm{x}+\vec{h})-f(\bm{x})\right\}-\left\{[\bm{Df}(\bm{x}_0)]\vec{h}\right\}}{|\vec{h}|}=0\]
+\begin{equation}
+	\lim_{\vec{h}\rightarrow 0} \frac{\left\{f(\bm{x}+\vec{h})-f(\bm{x})\right\}-\left\{[\bm{Df}(\bm{x}_0)]\vec{h}\right\}}{|\vec{h}|}=0
+\end{equation}
 As a linear transformation $\R^n\rightarrow \R^m$, $\bm{Df}(\bm{x}_0)$ has a matrix which is called the Jacobian of $f$ at $\bm{x}_0$: $[\bm{Df}(\bm{x}_0)]=[\bm{Jf}(\bm{x}_{0})]$. $[\bm{Df}(\bm{x}_0)]\vec{h}$ is referred to as the directional derivative. 
 
 The Jacobian and actual derivative matrix is in a bit of a grey area, where it is hard to differentiate the individual usages. In general, the Jacobian matrix is simply the matrix of the partial derivatives, regardless of whether or not the function is differentiable. If the function happens to be differentiable, then the derivative matrix matches the Jacobian matrix. 

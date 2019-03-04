@@ -1,9 +1,13 @@
 % !TEX root = ../multivar-notes.tex
-\lessondate{February 5, 2019}
+\newpage
+\subsection{Newton's Method}
+\subsubsection*{February 5, 2019}
 
 \begin{defn}{Newton's method}
 Let $\bm{\V{f}}$ be a differentiable map from $U$ to $\R^n$, where $U$ is an open subset of $\R^n$. \ul{Newton's method} consists of starting with some guesses $\bm{a}_0$ for a sollution of $\bm{\V{f}}(\bm{x})=\V{0}$. Then linearize the equation at $\bm{a}_0$: replace the increment to the function, $\bm{\V{f}}(\bm{x})-\bm{\V{f}}(\bm{a}_0)$, by a linear function of the increment, $[\bm{D\V{f}}(\bm{a}_0)](\bm{x}-\bm{a}_0)$. Now solve the corresponding linear equation:
-  \[\V{f}(\bm{a}_0)+[\bm{D\V{f}}(\bm{a}_0)](\bm{x}-\bm{a}_0)=\V{0}\]
+  \begin{equation}
+  	\V{f}(\bm{a}_0)+[\bm{D\V{f}}(\bm{a}_0)](\bm{x}-\bm{a}_0)=\V{0}
+  \end{equation}
   ***
   \begin{align*}
     a_0 &= \text{initial guess} \\

@@ -1,7 +1,9 @@
 % !TEX root = ../multivar-notes.tex
-\lessondate{January 7, 2019}
+\section{Topology}
+\subsection{Subsets of $\R$}
+\subsubsection*{January 7, 2019}
+We start with an in-depth exploration of topology first in single-dimensional reals.
 
-\Topic{Subsets of $\R$}
 \begin{defn}{Bounds}
 Let $X\subseteq \R$. Then\dots
 \begin{enumerate}
@@ -55,7 +57,9 @@ Suppose next that (i) and (ii) hold for $y\in \R$. We show that $y = \Sup(X)$. C
 
 \begin{proposition}
 	Let X be bounded below.
-	\[\Inf(X) = -\Sup(-X)\]
+	\begin{equation}
+		\Inf(X) = -\Sup(-X)
+	\end{equation}
 	where $-X = \{-x \mid x\in X\}$
 \end{proposition}
 
@@ -65,5 +69,7 @@ Suppose next that (i) and (ii) hold for $y\in \R$. We show that $y = \Sup(X)$. C
 
 \begin{proposition}\label{1.5}
 	If A, B are bounded subsets of $\R$. Then $A\cup B$ is bounded and
-	\[\Sup(A\cup B) = \Max\Set{\Sup(A), \Sup(B)}\]
+	\begin{equation}
+		\Sup(A\cup B) = \Max\Set{\Sup(A), \Sup(B)}
+	\end{equation}
 \end{proposition}

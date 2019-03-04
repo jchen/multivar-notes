@@ -1,5 +1,5 @@
 % !TEX root = ../multivar-notes.tex
-\lessondate{February 12, 2019}
+\subsubsection*{February 12, 2019}
 
 \exercise{2.10.9}
 Does the system of equations $x+y+\sin (xy)=a$ and $\sin (x^2+y)=2a$ have a solution for sufficiently small $a$?
@@ -17,8 +17,8 @@ Does the system of equations $x+y+\sin (xy)=a$ and $\sin (x^2+y)=2a$ have a solu
 \end{proof}
 \vspace{24pt}
 
-\ul{\textbf{$\bm{k}$-Manifolds in $\R^n$}}
-
+\section{$\bm{k}$-Manifolds in $\R^n$}
+\subsection{Introduction}
 Idea: In BC Calculus, the main object of study was ``functions''. This is too restrictive as many objects that are smooth (have a best linear approximation at each point) are not graphs of functions globally; e.g. circle, spiral, etc.
 
 Since the derivative only tells us about the local properties of a set of points, it suffices to ask that the set is the graph of a diffible function in in some nbhd of every point. A point set in $R^n$ that is locally the graph of some $C^1$-function $\R^k\to \R^{n-k}$ is called a $k$-manifold in $\R^n$.
@@ -34,5 +34,14 @@ There are two important ways to define a manifold:
 \end{enumerate}
 
 \begin{theorem}
-  \textbf{(Showing that a locus is a smooth manifold).} (Theorem 3.1.10) ***
+  \textbf{(Showing that a locus is a smooth manifold).} \begin{enumerate}
+ \item Let $U\in \R^n$ be open, and let $\bm{F}:U\to \R^{n-k}$ be a $C^1$ mapping. Let $M$ be a subset of $\R^n$ such that
+ \begin{equation}
+ 	M\cap U = \Set{\bm{z}\in U \mid \bm{F}(\bm{z})=\bm{0}}
+ \end{equation}
+ If $\mtrx{\bm{DF}(\bm{z})}$ is onto for every $\bm{z}\in M\cap U$, then $M\cap U$ is a smooth $k$-dimensional manifold embedded in $\R^n$. If every $\bm{z}\in M$ is in such a $U$, then $M$ is a $k$-dimensional manifold. 
+ 
+ \item Conversely, if $M$ is a smooth $k$-dimensional manifold embedded in $\R^n$, then every point $\bm{z}\in M$ has a neighborhood $U\in \R^n$ such that there exists a $C^1$ mapping $\bm{F}:U\to \R^{n-k}$ with $\mtrx{\bm{DF}(\bm{z})}$ onto and $M \cap U = \Set{\bm{y} \mid \bm{F}(\bm{y}) = \bm{0}}$. 
+ \end{enumerate}
+
 \end{theorem}

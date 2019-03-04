@@ -1,20 +1,28 @@
 % !TEX root = ../multivar-notes.tex
-\lessondate{January 15, 2019}
+\subsubsection*{January 15, 2019}
 
 \begin{defn}{Limit of a function}
 Let $X$ be a subset of $\R^n$ and $\bm{x}_0$ a point in $\overline{X}$ (note $\overline{X}=X\cup \delta X$). A function $\bm{f} : X \rightarrow \R^m$ has the \ul{limit} $\bm{a}$ at $\bm{x}_0$:
-\[\lim_{\bm{x}\rightarrow \bm{x}_0}\bm{f}(\bm{x}) = \bm{a}\]
+\begin{equation}
+	\lim_{\bm{x}\rightarrow \bm{x}_0}\bm{f}(\bm{x}) = \bm{a}
+\end{equation}
 if $\forall \epsilon > 0, \exists\delta > 0$ s.t. $\forall\bm{x}\in X$,
-\[|\bm{x}-\bm{x}_0|<\delta \implies |\bm{f}(\bm{x})-\bm{a}|<\epsilon\]
+\begin{equation}
+	|\bm{x}-\bm{x}_0|<\delta \implies |\bm{f}(\bm{x})-\bm{a}|<\epsilon
+\end{equation}
 
 Related Prop: \emph{If a function has a limit, it is unique. }
 \end{defn}
 
 \begin{proposition}
 \textbf{(Convergence by coordinates).} Suppose
-\[U\subset \R^n, \quad \bm{f}=\Point{f_1 \\ \vdots \\ f_m}: U\rightarrow \R^m,\text{ and }\bm{x}_0\in\overline{U}\]
+\begin{equation}
+	U\subset \R^n, \quad \bm{f}=\Point{f_1 \\ \vdots \\ f_m}: U\rightarrow \R^m,\text{ and }\bm{x}_0\in\overline{U}
+\end{equation}
 Then
-\[\lim_{\bm{x}\to\bm{x}_0} \bm{f}(\bm{x})=\Point{a_1 \\ \vdots \\ a_m}\text{ iff }\lim_{\bm{x}\to\bm{x}_0} f_i(\bm{x})=a_i, i=1,\dots,m.\]
+\begin{equation}
+	\lim_{\bm{x}\to\bm{x}_0} \bm{f}(\bm{x})=\Point{a_1 \\ \vdots \\ a_m}\text{ iff }\lim_{\bm{x}\to\bm{x}_0} f_i(\bm{x})=a_i, i=1,\dots,m
+\end{equation}
 \end{proposition}
 
 The above proposition basically states that for a multi-dimensional function, with each coordinate a function that has a limit, the limit of the multi-dimensional function is simply the individual limits as its coordinates. 
