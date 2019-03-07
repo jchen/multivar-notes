@@ -1,0 +1,59 @@
+% !TEX root = ../multivar-notes.tex
+\subsection{Lagrange Multipliers}
+\subsubsection*{March 7, 2019}
+
+\begin{defn}{Lagrange multipliers}
+	***
+\end{defn}
+
+\example Suppose we want to maximize $f\Point{x \\ y} = x + y$ on the ellipse $x^2 + 2y^2 = 1$. We have: 
+\[F\Point{x \\ y} = x^2+2y^2-1 \text{ and }\mtrx{\bm{D}F\Point{x \\ y}}=\mtrx{2x, 4y}\]
+while $\mtrx{\bm{D}f\Point{x \\ y}} = \mtrx{1, 1}$. So at a critical point, there will exist $\lambda$ such that
+\[\mtrx{1, 1}=\lambda\mtrx{2x, 4y}; \quad\text{i.e.,}\quad x=\frac{1}{2\lambda}; \quad y=\frac{1}{4\lambda} \]
+Inserting those values into our constraining equation for the ellipse gives
+\[\frac{1}{4\lambda^2}+2\frac{1}{16\lambda^2}=1,\quad \text{which gives}\quad \lambda=\pm \sqrt{\frac{3}{8}} \]
+
+\exercise{3.7.6} Let's elevate to a higher dimension! Find all the critical points of the function
+\[f\Point{x \\ y \\ z} = 2xy+2yz-2x^2-2y^2-2z^2\quad \text{on the unit sphere of }\R^3\]
+\begin{proof}
+	We find the derivatives of the two functions: 
+	\[\mtrx{\bm{D}f\Point{x \\ y \\ z}}=\mtrx{2y-4x, 2x+2z-4y, 2y-4z}\]
+	\[F\Point{x \\ y \\ z}=x^2+y^2+z^2-1=0\]
+	\[\mtrx{\bm{D}F\Point{x \\ y \\ z}}=\mtrx{2x, 2y, 2z}\]
+	\[\implies 2\mtrx{y-2x, x+z-2y, y-2z} = 2\lambda \mtrx{x, y, z}\]
+	\[\mtrx{-2 & 1 & 0 \\ 1 & -2 & 1 \\ 0 & 1 & -2}\mtrx{x \\ y \\ z}=\lambda \mtrx{x \\ y \\ z}\]
+	
+	This poses as an eigen-equation, with eigenvectors/points
+	\[\Point{\frac{1}{2} \\ -\frac{1}{\sqrt{2}} \\ \frac{1}{2}}, \Point{-\frac{1}{\sqrt{2}} \\ 0 \\ -\frac{1}{\sqrt{2}}},\Point{\frac{1}{2} \\ \frac{1}{\sqrt{2}} \\ \frac{1}{2}}\]
+\end{proof}
+
+\exercise{3.7.8} Find the maximum of the function $x^a e^{-x} y^b e^{-y}$ on the triangle $x\geq 0$, $y\geq 0$, $x+y\leq 1$, in terms of $a$ and $b$, for $a,b>0$. 
+
+\begin{proof}
+	$f\Point{x \\ y} = x^a e^{-x} y^b e^{-y} - c = 0$
+	\begin{align*}
+		\mtrx{\bm{D}f\Point{x \\ y}}&=\mtrx{y^b e^{-y}(ax^{a-1}e^{-x}-x^a e^{-x}) & x^a e^{-x}(by^{b-1}e^{-y}-y^be^{-y})} \\
+		&=x^a y^b e^{-x-y}\mtrx{\frac{a}{x}-1 & \frac{b}{y}-1} \\
+		&= f\Point{x \\ y}\mtrx{\frac{a}{x}-1 & \frac{b}{y}-1}
+	\end{align*}
+	
+	$F$ (the piecewise triangle): \\
+	\begin{center}
+	\usetikzlibrary{shapes.multipart}
+			\begin{tikzpicture}
+\draw (0,0) node[anchor=north]{$O$}
+  --node[anchor=north](y){$y = 0$} node[below of = y]{$\mtrx{0,1}$} (4,0)
+  --node[anchor=south west](xy){$x+y-1=0$} node[anchor=north west]{$\qquad\mtrx{1,1}$} (0,4)
+  --node[anchor=south east]{$x=0$}node[anchor=north east]{$\mtrx{1, 0}$} cycle;
+\end{tikzpicture}
+	\end{center}
+	
+	\[f\Point{x \\ y}\mtrx{\frac{a}{x}-1 & \frac{b}{y}-1}=\begin{cases}
+\lambda\ [1, 0] \\
+\lambda\ [0, 1] \\
+\lambda\ [1, 1]	
+\end{cases}\]
+
+***
+
+\end{proof}
