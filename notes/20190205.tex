@@ -3,18 +3,30 @@
 \subsection{Newton's Method}
 \subsubsection*{February 5, 2019}
 
+The gist of Newton's method is simple. Repeatedly \emph{linearize} and solve for the root of the linearization (where it hits $\bm{0}$), then rinse and repeat. This gives an increasingly better approximation for the root of the function each time. 
+
 \begin{defn}{Newton's method}
-Let $\bm{\V{f}}$ be a differentiable map from $U$ to $\R^n$, where $U$ is an open subset of $\R^n$. \ul{Newton's method} consists of starting with some guesses $\bm{a}_0$ for a sollution of $\bm{\V{f}}(\bm{x})=\V{0}$. Then linearize the equation at $\bm{a}_0$: replace the increment to the function, $\bm{\V{f}}(\bm{x})-\bm{\V{f}}(\bm{a}_0)$, by a linear function of the increment, $[\bm{D\V{f}}(\bm{a}_0)](\bm{x}-\bm{a}_0)$. Now solve the corresponding linear equation:
+Let $\vec{\bm{f}}$ be a differentiable map from $U$ to $\R^n$, where $U$ is an open subset of $\R^n$. \ul{Newton's method} consists of starting with some guess $\bm{a}_0$ for a solution of $\vec{\bm{f}}(\bm{x})=\bm{0}$. Then linearize the equation at $\bm{a}_0$: replace the increment to the function, $\vec{\bm{f}}(\bm{x})-\vec{\bm{f}}(\bm{a}_0)$, by a linear function of the increment, $[\bm{D}\vec{\bm{f}}(\bm{a}_0)](\bm{x}-\bm{a}_0)$. Now solve the corresponding \emph{linear equation}:
   \begin{equation}
-  	\V{f}(\bm{a}_0)+[\bm{D\V{f}}(\bm{a}_0)](\bm{x}-\bm{a}_0)=\V{0}
+  	\vec{\bm{f}}(\bm{a}_0)+[\bm{D}\vec{\bm{f}}(\bm{a}_0)](\bm{x}-\bm{a}_0)=\V{0}
   \end{equation}
-  ***
+  which becomes a system of linear equations in $n$ unknowns: 
+  \begin{equation}
+  	\underbrace{[\bm{D\V{\bm{f}}}(\bm{a}_0)]}_{A}\underbrace{(\bm{x}-\bm{a}_0)}_{\V{x}}=\underbrace{-\vec{\bm{f}}(\bm{a}_0)}_{\vec{b}}
+  \end{equation}
+  Usually, $[\bm{D\V{f}}(\bm{a}_0)]$ is invertible, so we can find the inverse and distribute the equation. We can additionally generalize using the $n$th term of the approximation:  
+  \begin{equation}
+  	\bm{a}_{n+1}=\bm{a}_n-[\bm{D}\vec{\bm{f}}(\bm{a}_0)]^{-1}\vec{\bm{f}}(\bm{a}_n)
+  \end{equation}
+\end{defn}
+
+Example:
   \begin{align*}
     a_0 &= \text{initial guess} \\
-    a_{n+1} &= a_n - [\bm{D\V{f}}(a_n)]^{-1} \bm{f}(a_n) \\
+    a_{n+1} &= a_n - [\bm{D}\bm{f}(a_n)]^{-1} \bm{f}(a_n) \\
     x_{n+1} &= x_n - \frac{\bm{f}(x)}{\bm{f}'(x_n)}
   \end{align*}
-\end{defn}
+
 
 \example
 \[f\Point{x \\ y} = \Point{\cos x + y - 1.1 \\  x + \cos (x + y) - 0.9}\]

@@ -2,7 +2,9 @@
 \subsubsection*{February 12, 2019}
 
 \exercise{2.10.9}
-Does the system of equations $x+y+\sin (xy)=a$ and $\sin (x^2+y)=2a$ have a solution for sufficiently small $a$?
+Does the system of equations
+\[x+y+\sin (xy)=a\quad\text{ and }\quad \sin (x^2+y)=2a\]
+have a solution for sufficiently small (but nonzero) $a$?
 
 \answer{Yes}
 
@@ -11,11 +13,22 @@ Does the system of equations $x+y+\sin (xy)=a$ and $\sin (x^2+y)=2a$ have a solu
     x+y+\sin(xy)-a &= 0 \\
     \sin(x^2+y)-2a &= 0
   \end{cases}$
-  \[\bm{DF}(x,y,a) = \mtrx{1 + y\cos(xy) & 1 + x\cos(xy) & -1 \\ 2x\cos(x^2+y) & \cos(x^2+y) & -2}\]
-  \[\bm{DF}\vec{c} = \bm{DF}\Point{0 \\ 0 \\ 0} = \mtrx{1 & 1 & -1 \\ 0 & 1 & -2}\]
-  $x$ and $y$ are pivotal so $x$ and $y$ both exist.
+  \[[\bm{DF}(x,y,a)] = \mtrx{1 + y\cos(xy) & 1 + x\cos(xy) & -1 \\ 2x\cos(x^2+y) & \cos(x^2+y) & -2}\]
+  \[[\bm{DF}\vec{c}] = \mtrx{\bm{DF}\Point{0 \\ 0 \\ 0}} = \mtrx{1 & 1 & -1 \\ 0 & 1 & -2}\]
+  $x$ and $y$ are pivotal, so $x$ and $y$ are functions of $a$ in some neighborhood of $\bm{0}$.
 \end{proof}
-\vspace{24pt}
+
+\exercise{2.10.15a}
+Show that the mapping
+\[\bm{F}\Point{x \\ y}=\Point{e^2+e^y \\ e^2 + e^{-y}}\]
+is locally invertible at every point $\Point{x \\ y}\in \R^2$. 
+\begin{proof}
+	Using the inverse function theorem: 
+	\[\mtrx{\bm{DF}\Point{x \\ y}}=\mtrx{e^x & e^y \\ e^x & -e^{-y}}\]
+	Then
+	\[det\mtrx{\bm{DF}\Point{x \\ y}}=-e^{x-y}-e^{x+y}<0\]
+	So $\bm{DF}$ is invertible everywhere, then $F$ is locally invertible everywhere by the inverse function theorem. 
+\end{proof}
 
 \section{$\bm{k}$-Manifolds in $\R^n$}
 \subsection{Introduction}
