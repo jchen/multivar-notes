@@ -1,0 +1,27 @@
+% !TEX root = ../multivar-notes.tex
+\subsubsection*{April 1, 2019}
+
+\exercise{4.5.18}
+\begin{enumerate}[a.]
+	\item Transform the iterated integral $\displaystyle \int_0^1 \left(\int_{y}^{y^{1/3}} e^{-x^2}\ dx\right)\ dy$ into an integral over a subset of the plane. Sketch this subset. 
+	\item Compute the integral. 
+	\begin{align*}
+		\int_0^1 \left(\int_{y}^{y^{1/3}} e^{-x^2}\ dx\right)\ dy &= \int_0^1 \left(\int_{x^3}^{x} e^{-x^2}\ dy\right)\ dx \\
+		&= \int_0^1 \left(\left(x-x^3\right)e^{-x^2}\right)\ dx \\
+		&= \int_0^1 \left(x-x^3\right) e^{-u} \frac{du}{2x} \\
+		&= \frac{1}{2}\int_0^1 (1-u) e^{-u}\ du \\
+		&= \frac{1}{2}\left(\int_0^1 e^{-u}\ du - \int_0^1 ue^{-u}\ du\right)\\
+		&= \frac{1}{2}\left(\left[\right]_0^1-\left[\right]_0^1\right)
+	\end{align*}
+\end{enumerate}
+
+\exercise{4.5.19} What is the volume of the region given by
+\[\frac{x^2}{\System{z^3-1}^2}+\frac{y^2}{\System{z^3+1}^2}\leq 1, \quad -1\leq z\leq 1\]
+
+They are
+\begin{align*}
+	\int_{-1}^1 \pi\cdot |a|\cdot |b|\ dz &= \int_{-1}^1 \pi\cdot \left|1-z^3\right|\cdot \left|z^3+1\right|\ dz \\
+	&= \pi \int_{-1}^1 \left|\left(z^6-1\right)\right| \ dz \\
+	&= \pi \left[z - \frac{1}{7}z^7\right]_{-1}^1 \\
+	&= \pi \left(\frac{6}{7}--\frac{6}{7}\right) = \frac{12\pi}{7}
+\end{align*}
