@@ -1,3 +1,45 @@
 % !TEX root = ../multivar-notes.tex
 \subsection{Change of Coordinates}
-\subsubsection*{April 1, 2019}
+(a.k.a. "$u$-substitution")
+\subsubsection*{April 2, 2019}
+
+(*** Graphics drawn on paper)
+
+\begin{align*}
+	\vec{a} &= \gamma(u+\Delta u, v) - \gamma (u,v) = \gamma(u,v)+D_u \gamma(u,v)\Delta u + \cdots -\gamma (u,v)=D_u \gamma (u,v)\Delta u \\
+	\vec{b} &=  \gamma(u, v+\Delta u) - \gamma (u,v) = \gamma(u,v)+D_v \gamma(u,v)\Delta v + \cdots -\gamma (u,v)=D_v \gamma (u,v)\Delta v
+\end{align*}
+\[\implies \Vol_2 (P) = \left| det\ D_\gamma (u,v) \right| \Delta u\ \Delta v \]
+
+As $\Delta u, \Delta v\to 0$, the volume of the partition boxes becomes $\left| det \ D_\gamma (u,v) \right| d u\ d v$
+
+Ex: Polar Coordinates
+\[\Point{x \\ y} = \Point{r\cos \theta \\ r\sin\theta}\]
+(*** on paper)
+
+\[D_\gamma \Point{r \\ \theta} = \mtrx{ \cos\theta & -r \sin\theta \\ \sin\theta & r\cos\theta} \qquad \left| det \ D_\gamma \Point{r\\ \theta} \right|=r\]
+
+\begin{theorem}
+	\textbf{(Change of variables formula).} Let $X$ be a compact subset of $\R^n$ with boundary $\partial X$ of volume 0; let $U\subset \R^n$ be an open set containing $X$. Let $\Phi : U \to \R^n$ be a $C^1$ mapping that is injective on $(X-\partial X)$ and has Lipschitz derivative, with $[\bm{D} \Phi (\bm{x}) ]$ invertible at every $\bm{x}\in (X-\partial X)$. Set $Y = \Phi(X)$. 
+	
+	Then if $f : Y\to \R$ is integrable, $(f\circ \Phi)|det[\bm{D}\Phi]|$ is integrable on $X$, and
+	
+	\begin{equation}
+		\int_Y f(\bm{y})\left|d^m \bm{y}\right|=\int_X (f\circ \Phi)(\bm{x})\ \big|det[\bm{D}\Phi (\bm{x})]\big|\ \left|d^n \bm{x}\right|
+	\end{equation}
+\end{theorem}
+
+We try this using an ellipse: to find the area of $\frac{x^2}{a^2}+\frac{y^2}{b^2}=1$ using "polar" coordinates. 
+\[x=ar\cos \theta,\quad y=br\sin\theta\]
+where $r\in [0,1]$ and $\theta \in [0,2\pi]$. 
+\[ \int_{x=-a}^{a}
+\left( \int_{y=\frac{b}{a} \sqrt{a^2-x^2}}^{-\frac{b}{a} \sqrt{a^2-x^2}} 1(x,y)\left|d^2(x,y) \right| \right) = \int_{\theta = 0}^{2\pi} \left(\int_{r=0}^{1} 1(r,\theta)\ abr\ dr\right) d\theta\]
+
+\[\gamma\Point{r \\ \theta} = \Point{a r \cos \theta \\ b\ r\sin\theta} ***\]
+
+\exercise{4.10.1} Using Fubini, compute $\int_{D_R}(x^2+y^2)\ dx\ dy$ (see Example 4.10.4), where
+\[D_R = \Set{\Point{x \\ y}\in \R^2 \mid x^2+y^2 \leq R^2} \]
+
+We set this up in polar form: 
+\[x = r\cos \theta, \quad y = r\sin \theta\]
+\[\int_{\theta = 0}^{2\pi} \left( \int_{r=0}^R r^2\cdot r\cdot dr\right)\ d\theta = \left[2\pi \frac{r^4}{4}\right]_0^R = \frac{\pi R^4}{2}\]
