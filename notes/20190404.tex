@@ -1,0 +1,27 @@
+% !TEX root = ../multivar-notes.tex
+\subsubsection*{April 4, 2019}
+\begin{proposition}
+	\bm{(Change of variables for polar coordinates).} 
+\end{proposition}
+
+\begin{defn}{Spherical coordinates map}
+	The \ul{spherical coordinate map} $S$ maps a point in space (e.g., a point inside the earth) known by its distance $\rho$ from the center, its longitude $\theta$, and its latitude $\varphi$, to a point in $(x,y,z)$-space:
+	\begin{equation}
+		S : \Point{\rho \\ \theta \\ \varphi} \mapsto \Point{x=\rho\cos\theta\cos\varphi \\ y=\rho\sin\theta\cos\varphi \\ z = \rho\sin\varphi}
+	\end{equation}
+	\emph{(Here we use $\rho$ instead of $r$ to prevent confusion between distance from origin $\rho$ and distance from $z$-axis $r$ in the cylindrical coordinate map). }
+\end{defn}
+
+\begin{proposition}
+	\bm{(Change of variables for spherical coordinates).}
+	\begin{equation}
+		\int_A f\Point{x \\ y \\ z} \left|dx\ dy\ dz\right| = \int_B f\Point{***}
+	\end{equation}
+\end{proposition}
+
+\begin{defn}{Cylindrical coordinates map}
+	The \ul{cylindrical coordinates map} $C$ maps a point in space known by its altitude $z$ and by the polar coordinates $r, \theta$ of its projection into the $(x,y)$-plane, to a point in $(x,y,z)$-space: 
+	\begin{equation}
+		C : \Point{r \\ \theta \\ z} \mapsto \Point{r\cos\theta \\ r\sin\theta \\ z}
+	\end{equation}
+\end{defn}
