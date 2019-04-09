@@ -1,0 +1,44 @@
+% !TEX root = ../multivar-notes.tex
+\subsubsection*{April 8, 2019}
+
+Content to be covered on the test: 
+\begin{itemize}
+	\item Riemann Integrals
+	\item Fubini's Theorem
+	\item Change of Coordinates
+\end{itemize}
+
+\subsection{Orientation}
+Orientation gives us a sense of sign or direction of vector spaces. For example, when calculating flux through a surface, one side is the preferred direction (so flux through that side is positive), and likewise the other direction will be negative. 
+\begin{defn}{Orientation of vector space}
+	Let $V$ be a finite-dimensional real vector space, and let $\mathcal{B}_V$ be the set of bases of $V$. An \ul{orientation} of $V$ is a map $\Omega : \mathcal{B}_V \to \{+1, -1\}$ such that if $\{\bm{v}\}$ and $\{\bm{v'}\}$ are two bases with change of basis matrix $\mtrx{P_{\bm{v}\to \bm{v'}}}$, then
+	\begin{equation}
+		\Omega\left(\{\bm{v'}\}\right) = \mathrm{sgn}\System{\Det \mtrx{P_{\bm{v'}\to \bm{v}}}}\Omega\left(\{\bm{v}\}\right)
+	\end{equation}
+	A basis $\{\bm{vw}\}\in\mathcal{B}_V$ is called \ul{direct} if $\Omega\left(\{\bm{w}\}\right)=+1$; it is called \ul{indirect} if $\Omega\left(\{\bm{w}\}\right)=-1$. 
+\end{defn}
+
+\example 
+\[\System{\mtrx{1\\0}, \mtrx{0\\1}}\to \System{\mtrx{2\\0}, \mtrx{0\\2}}\]
+\[\Det \mtrx{2 & 0 \\ 0 & 2} > 0\]
+
+\begin{defn}{Orientation of manifold}
+	An \ul{oriantation} of a $k$-dimensional manifold $M\subset \R^n$ is a continuous map $\mathcal{B}(M)\to \{+1,-1\}$ whose restriction to each $\mathcal{B}_{\bm{x}}M$ is an orientation of $T_{\bm{x}}M$. 
+\end{defn}
+
+\begin{proposition} $ $ *** \\[-12pt]
+	\begin{enumerate}
+		\item \bm{Orienting poitns.}
+		\item \bm{Orienting open subsets of $\R^n$.}
+		\item \bm{Orienting a curve.}
+		\begin{equation}
+			\Omega_{\bm{x}}^{\vec{\bm{t}}} (\vec{\bm{v}}) \Def \mathrm{sgn} (\vec{\bm{t}}(\bm{x})\cdot \vec{\bm{v}})
+		\end{equation}
+		\item \bm{Orienting a surface in $\R^3$.} (In fact, a hyper-surface in $\R^n$)
+		\item 
+	\end{enumerate}
+\end{proposition}
+
+\exercise{6.3.4} Find a vector field that orients the curve given by $x+x^2+y^2=2$. 
+
+\[x+x^2+y^2-2=0\]
