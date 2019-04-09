@@ -1,0 +1,61 @@
+% !TEX root = ../multivar-notes.tex
+\subsubsection*{April 4, 2019}
+
+Roadmap of the semester, from concrete to general/abstract: 
+\begin{itemize}
+	\item Riemann integrals in $\R^n$, region of a box. 
+	\item Riemann integrals in $\R^n$, region of a reasonably well behaved subset of $\R^n$.
+	\item Riemann integrals in $\R^n$, with respect to various coordinate systems.
+	\[\int (f\circ \Phi)(\bm{x})\ \big|det[\bm{D}\Phi (\bm{x})]\big|\ \left|d^n \bm{x}\right|\]
+	\item We now ask how to make sense of a situation in which $\Phi : U \to \R^n$, $U\subseteq \R^k$, $k<n$. e.g. the unit circle: $\Phi : [0,2\pi] \to \R^2$ $\Phi(\theta) = \Point{\cos\theta \\ \sin\theta}$. 
+	\item We remember that the determinant can be thought of as an $n$-form in $\R^n$: 
+	\[dx\land dy\land dz \System{\vec{v_1},\vec{v_2},\vec{v_3}} = det\System{\mtrx{\vec{v_1},\vec{v_2},\vec{v_3}}} \]
+\end{itemize}
+
+A review of $k$-forms: 
+
+\exercise{6.1.something} Compute the following. 
+\begin{enumerate}[a.]
+	\item $(x_1-x_4)\ dx_3 \land dx_2 \System{P_{\bm{0}} \System{\mtrx{1\\2\\3\\4},\mtrx{0\\1\\-1\\1}} }$
+	
+	\answer{0} As $x_1-x_4$ evaluates to 0. 
+	
+	\item 
+\end{enumerate}
+
+\begin{defn}{Integrating a $k$-form field over a parametrized domain}
+	Let $U\subset \R^k$ be a bounded open set with $\mathrm{vol}_k \partial U = 0$. Let $V\subset \R^n$ be open, and let $[\gamma(U)]$ be a parametrized domain in $V$. Let $\varphi$ be a $k$-form field on $V$. 
+	
+	Then the... ***
+\end{defn}
+
+Integrating a 2-form field over a parametrized surface in $\R^3$: 
+\[ \gamma\Point{s \\ t} = \Point{s+t \\ s^2 \\ t^2},\quad S=\Set{\Point{s \\ t}\big|\ 0\leq s\leq 1, 0\leq t \leq 1}\]
+\begin{align*}
+	\int_{[\gamma(S)]}dx\land dy + y dx\land dz \\
+	&= \int_0^1 \int_0^1 (dx\land dy + y dx\land dz) \System{P_{\Point{s+t \\ s^2 \\ t^2}} \System{\mtrx{1 \\ 2s \\ 0},\mtrx{1 \\ 0 \\ 2t}}}\ ds\ dt \\
+	&= \int_0^1 \int_0^1 \System{\Det \mtrx{1 & 1 \\ 2s & 0} + s^2 \Det\mtrx{1 & 1 \\ 0 & 2t}}\ ds\ dt \\
+	***
+\end{align*}
+
+\exercise{6.2.1} Set up each of the following integrals of form fields over parametrized domains as an ordinary multiple integral, and compute it. 
+\begin{enumerate}[a.]
+	\item $\int_{[\gamma(I)]}x\ dy + y\ dz$, where $I=[-1,1]$, and $\gamma(t) = \Point{\sin t \\ \cos t \\ t}$
+	
+	\[\gamma(t) = \Point{\sin t \\ \cos t \\ t} \qquad D\gamma(t) = \mtrx{\cos t \\ -\sin t \\ 1}\]
+	\begin{align*}
+	\int_{[\gamma(I)]}x\ dy + y\ dz &= \int_{t=-1}^{1} x\ dy + y\ dz\System{P_{\Point{\sin t \\ \cos t \\ t}} \System{\mtrx{\cos t \\ -\sin t \\ 1}}}\ |dt| \\
+	&=\int_{-1}^1 \sin t(-\sin t)+\cos t\cdot 1\ dt \in \R	
+	\end{align*}
+	
+	\item $\int_{[\gamma(U)]}x_1\ dx_2\land dx_3 + x_2\ dx_3\land dx_4$, where $U=\Set{\Point{u \\ v} \big|\ 0\leq u, v; u+v\leq 2}$, 
+
+	and $\gamma\Point{u \\ v} = \Point{uv \\ u^2+v^2 \\ u-v \\ \ln(u+v+1)}$
+
+
+\end{enumerate}
+
+\exercise{6.2.2}
+
+\[d\gamma = \mtrx{2u & 0 \\ 1 & 1 \\ 0 & 3v^2}\]
+\[\int_{-1}^1 \int_{-1}^1 3u^2v^2\ du\ dv\]
