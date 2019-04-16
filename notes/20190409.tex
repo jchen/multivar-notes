@@ -1,0 +1,32 @@
+% !TEX root = ../multivar-notes.tex
+\subsubsection*{April 8, 2019}
+
+\exercise{6.2.4} Let $z_1=x_1+iy_1, z_2=x_2+iy_2$ be coordinates in $\C^2$. Let $S \subset \C$ be the square $\Set{z=x+iy\ \big| |x|\leq 1, |y|\leq 1}$, and define $\gamma : S \to \C^2$ by
+\[\gamma : z \mapsto \Point{e^z \\ e^{-z}}, z=x+iy, |x|\leq 1, |y| \leq 1 \]
+What is $\displaystyle \int_{[\gamma(S)]} dx_1\land dy_1 + dy_1 \land dx_2 + dx_2 \land dy_2$ ?
+
+First we note that $e^z = e^x(\cos y + i\sin y)$ and $e^{-z} = e^{-x}(\cos y - i\sin y)$ so 
+\[\gamma : \binom{x}{y} \mapsto \begin{pmatrix} e^x \cos y \\ e^x \sin y \\ e^{-x} \cos y \\ - e^{-x} \sin y\end{pmatrix}\] 
+Therefore,
+$$\int_{[\gamma(S)]} dx_1 \wedge dy_1 + dy_1 \wedge dx_2 + dx_2 \wedge dy_2 $$
+$$ = \int_{-1}^1\int_{-1}^1 dx_1 \wedge dy_1 + dy_1 \wedge dx_2 + dx_2 \wedge dy_2\left( P_{\begin{pmatrix} e^x \cos y \\ e^x \sin y \\ e^{-x} \cos y \\ - e^{-x} \sin y\end{pmatrix}} \left(\begin{bmatrix}e^x\cos y \\ e^x\sin y \\ -e^{-x}\cos y \\ e^{-x}\sin y\end{bmatrix}, \begin{bmatrix} -e^x\sin y \\ e^x\cos y \\ -e^{-x}\sin y \\ -e^{-x}\cos y\end{bmatrix}\right)\right) |dx\ dy|$$
+$$ = \int_{-1}^1\int_{-1}^1 \Det \begin{bmatrix}e^x\cos y & -e^x\sin y \\ e^x\sin y & e^x\cos y\end{bmatrix} +\ \Det \begin{bmatrix}e^x\sin y & e^x\cos y \\ -e^{-x} \cos y & -e^{-x} \sin y\end{bmatrix} +\ \Det \begin{bmatrix} -e^{-x} \cos y & -e^{-x} \sin y \\ e^{-x}\sin y & -e^{-x}\cos y\end{bmatrix} |dx\ dy|$$
+$$ = \int_{-1}^1\int_{-1}^1 e^{2x} -\sin^2 y + \cos^2 y + e^{-2x} |dx\ dy|=2\sin(2) +4\sinh(2)\quad \text{\emph{(This is just using Mathematica.)} }$$
+
+Recall from last class, 
+
+\exercise{6.3.4} Find a vector field that orients the curve given by $x+x^2+y^2=2$. 
+
+\[x+x^2+y^2-2=0\]
+
+\begin{align*}
+	x^2+x+\frac{1}{4} - \frac{1}{4} + y^2 &= 2 \\
+	\left(x+\frac{1}{2}\right)^2 + y^2 &= \frac{9}{4} = r^2 \qquad r=\frac{3}{2}
+\end{align*}
+\[\Gamma: t\mapsto \Point{-\frac{1}{2}+\frac{3}{2}\cos t \\ \frac{3}{2}\sin t}, \quad t\in [0,2\pi], \qquad D\Gamma(t) = \mtrx{-\sin t \\ \cos t}\]
+
+Or we can also do 
+\[DF = \mtrx{2x+1 & 2y}\]
+\[\mtrx{2x+1 & 2y}\mtrx{\dot{x} \\ \dot{y}}=0\]
+\[(2x+1)\dot{x}+2y\dot{y}=0\]
+\[\mtrx{\dot{x} \\ \dot{y}} = \mtrx{2y \\ -(2x+1)} \text{ or }\mtrx{-2y \\ 2x+1}\]
