@@ -1,0 +1,46 @@
+% !TEX root = ../multivar-notes.tex
+\subsubsection*{April 8, 2019}
+
+\exercise{6.3.12} Consider the manifold $M \subset \R^4$ of the equation $x_1^2 + x_2^2 + x_3^2 - x_4 = 0$. Find a basis for the tangent space to $M$ at point $\Point{1, 0, 0, 1}$ that is direct for the orientation given by Proposition 6.3.9. 
+
+To find a basis for $T_{\Point{1, 0, 0, 1}}M$, we find
+\[\Ker \System{\mtrx{2x_1 & 2x_2 & 2x_3 & -1}}\mid_{\Point{x_1 \\ x_2 \\ x_3 \\ x_4}=\Point{1 \\ 0 \\ 0 \\ 1}} = \Ker \System{\mtrx{2 & 0 & 0 & -1}}\]
+
+So we solve $\mtrx{2 & 0 & 0 & -1}\mtrx{\dot{x}_1 \\ \dot{x}_2 \\ \dot{x}_3 \\ \dot{x}_4}=0$, it is also true that $\mtrx{2 \\ 0 \\ 0 \\ -1}\cdot \mtrx{\dot{x}_1 \\ \dot{x}_2 \\ \dot{x}_3 \\ \dot{x}_4}=0$. 
+
+$\implies \mtrx{2 \\ 0 \\ 0 \\ -1}$ is a transverse vector and can be used for orientation: $\System{\mtrx{2 \\ 0 \\ 0 \\ -1}, \vec{\bm{v}}_1, \vec{\bm{v}}_2, \vec{\bm{v}}_3}$ is a direct basis of $\R^4$, where $\System{\vec{\bm{v}}_1, \vec{\bm{v}}_2, \vec{\bm{v}}_3}$ is a basis of $T_p M$. 
+
+\[2\dot{x}_1 - \dot{x}_4=0\]
+
+\[\mtrx{\dot{x}_1 \\ \dot{x}_2 \\ \dot{x}_3 \\ \dot{x}_4} = \mtrx{1 \\ 0 \\ 0 \\ 2}\dot{x}_1 + \mtrx{0 \\ 1 \\ 0 \\ 0}\dot{x}_2 + \mtrx{0 \\ 0 \\ 1 \\ 0}\dot{x}_3\]
+
+\[\Det \mtrx{2 & 1 & 0 & 0 \\ 0 & 0 & 1 & 0 \\ 0 & 0 & 0 & 1 \\ -1 & 2 & 0 & 0}=-\Det \mtrx{2 & 1 & 0 \\ 0 & 0 & 1 \\ -1 & 2 & 0}=\Det\mtrx{2 & 1 \\ -1 & 2}=5>0\]
+
+\begin{defn}{Orientation-preserving parametrization of a manifold}
+	$\gamma$ is \ul{orientation-preserving} if for all $\bm{u}\in (U-X)$, we have
+	\begin{equation}
+		\Omega(\overrightarrow{D_1\gamma} (\bm{u}),\dots, \overrightarrow{D_k\gamma}(\bm{u}))=+1.
+	\end{equation}
+\end{defn}
+
+Using the above example: 
+\[x_4=x_1^2 + x_2^2 + x_3^2\]
+\[\gamma\Point{s \\ t \\ u} = \Point{s \\ t \\ u \\ s^2+t^2+u^2}\]
+\[D\gamma\Point{s \\ t \\ u} = \mtrx{1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \\ 2s & 2t & 2u}\]
+\[\text{If }\Point{s \\ t \\ u} = \Point{1 \\ 0 \\ 0}, \gamma\Point{s \\ t \\ u} = \Point{1 \\ 0 \\ 0 \\ 1}\]
+
+Then we get the basis: 
+\[\System{\mtrx{1 \\ 0 \\ 0 \\ 2},\mtrx{0 \\ 1 \\ 0 \\ 0}, \mtrx{0 \\ 0 \\ 1 \\ 0}}\]
+Now we need to check whether this basis is a direct basis w.r.t orientation given by the transverse vector $\mtrx{2 \\ 0 \\ 0 \\ -1}$. The calculations are the same as above. 
+
+\exercise{6.4.1} If the cone $M$ of equation $f\Point{x \\ y \\ z}=x^2+y^2-z^2=0$ is oriented by $\vec{\nabla} f$, does the parametrization $\gamma : \Point{r \\ \theta} \mapsto \Point{r \cos \theta \\ r \sin\theta \\ r}$ preserve orientation? 
+
+\[\nabla f = \mtrx{D_1 f \\ D_2 f \\ \vdots \\ D_n f}=[Df]^T\]
+\[\nabla f = \mtrx{2x \\ 2y \\ -2z}\implies \text{we can just use }\vec{n}=\mtrx{x \\ y \\ -z} = \mtrx{r \cos \theta \\ r \sin \theta \\ -r}\]
+
+\[D\gamma \Point{r \\ \theta} = \mtrx{\cos \theta & -r\sin\theta \\ \sin\theta & r\cos\theta \\ 1 & 0}\]
+
+\[\text{If } \theta = 0, r = 1 : \vec{\bm{n}} = \mtrx{1 \\ 0 \\ -1} \text{ and } \mtrx{D_1\gamma, & D_2\gamma} = \mtrx{1 & 0 \\ 0 & 1 \\ 1 & 0}\]
+\[\Det \mtrx{1 & 1 & 0 \\ 0 & 0 & 1 \\ -1 & 1 & 0}\]
+
+\exercise{6.4.4}
