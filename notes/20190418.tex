@@ -1,0 +1,34 @@
+% !TEX root = ../multivar-notes.tex
+\subsection{Complex Functions}
+\subsubsection*{April 18, 2019}
+
+Today we explore functions $f : \C \to \C$. 
+\[f(z)=z+a, a\in\C\]
+Geometrically, this translates the complex plane by vector $a$. 
+\begin{align*}
+	f(z)&=cz, c\in\C\qquad c=|c|e^{i\gamma}, z=r e^{i\theta} \\
+	&=|c| r \cdot e^{i(\theta+\gamma)}
+\end{align*}
+This is a rotation by $\mathrm{arg}(c)=\gamma$ and a dilation by $|c|$. 
+
+\[f(z)=\bar{z} : \text{This is a reflection in } \Re e (z) : \overline{x+iy}=x-iy\]
+
+\[f : t\mapsto e^{it}, t\in \R\]
+\begin{align*}
+	e^{i(t+\Delta t)}&\approx e^{it}+ ie^{it}\Delta t + \cdots \\
+	&= e^{it}+(i\Delta t)e^{it}
+\end{align*}
+
+\[f(z)=e^z=e^{x+iy}=e^x\cdot \underbrace{e^{iy}}_{\text{This lives on the unit circle and has } \mathrm{arg}(e^{iy})=y}\]
+
+$\implies e^z$ stretches $z$ by $e^{\Re e\ z}$ and rotates by $\Im m\ z$. 
+
+\begin{align*}
+	\text{From } e^{iz} &= \cos z + i \sin z \text{, we can derive $\cos z$ and $\sin z$ in terms of the exponential:} \\
+	e^{-iz} &= \cos(-z) + i\sin (-z) \\
+	&= \cos z - i \sin z
+\end{align*}
+
+If adding: $\displaystyle \frac{e^{iz}+e^{-iz}}{2}=\cos z = \cosh (iz)$
+
+If subtracting: $\displaystyle \frac{e^{iz}-e^{-iz}}{2}=\sin z = \sinh (iz)$

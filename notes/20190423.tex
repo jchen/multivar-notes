@@ -1,0 +1,40 @@
+% !TEX root = ../multivar-notes.tex
+\subsection{Forms and Vector Fields}
+\subsubsection*{April 23, 2019}
+A constant $0$-form is simply a number, and a $0$-form field is simply a function. 
+
+Every 1-form is the \ul{work form} of a vector field. 
+\begin{defn}{Work form}
+	***The \ul{work form} $W_{\vec{F}}$ of a vector field $F=\mtrx{F_1^T, \cdots, F_n^T}^T$ is the 1-form field defined by
+	\begin{equation}
+		W_{\vec{F}}
+	\end{equation}
+\end{defn}
+
+\example What is the work of $\vec{F}\Point{x \\ y \\ z}=\mtrx{y \\ -x \\ 0}$ over the helix oriented by the tangent vector field $\vec{\bm{t}}=\mtrx{-\sin t \\ \cos t \\ 1}$, and parametrized by $\gamma(t)=\Point{\cos t \\ \sin t \\ t}$, for $0<t<4\pi$? 
+
+\[\vec{F}\Point{x \\ y \\ z}=\mtrx{y \\ -x \\ 0}\qquad W_{\vec{f}}=y\ dx -d\ dy\qquad D\gamma(t)=\mtrx{-\sin t \\ \cos t \\ 1}\]
+\begin{align*}
+\int_C W_{\vec{F}}&=\int_0^{4\pi} y\ dx - x\ dy \System{P_{\Point{\cos t \\ \sin t \\ t}} \System{\mtrx{-\sin t \\ \cos t \\ 1}}} \\
+&=\int_{t=0}^{4\pi} \sin t (-\sin t) - \cos t \cos t dt = \int_{0}^{4\pi} -1 dt = -4\pi
+\end{align*}
+
+
+\exercise{6.5.18} Find the work of $\vec{F}\Point{x \\ y \\ z}=\mtrx{x^2 \\ y^2 \\ z^2}$ over the arc of helix parametrized by $\gamma : t\mapsto \Point{\cos t \\ \sin t \\ at}$, for $0\leq t\leq a$, and oriented so that $\gamma$ is orientation preserving. 
+
+\[\vec{F}\Point{x \\ y \\ z}=\mtrx{x^2 \\ y^2 \\ z^2}\qquad \gamma : t\mapsto \Point{\cos t \\ \sin t \\ at} \qquad D\gamma = \mtrx{-\sin t \\ \cos t \\ a}\]
+
+\begin{align*}
+	\int_C W_{\vec{F}} &= \int_{t=0}^{a} x^2\ dx + y^2\ dy + z^2\ dz \System{P_{\Point{\cos t \\ \sin t \\ at}} \System{\mtrx{-\sin t \\ \cos t \\ a}}} \\
+	&= \int_{t=0}^a -\cos^2 t \sin t + \sin^2 t \cos t + a^3t^2\ dt \\
+	***
+\end{align*}
+
+\begin{defn}{Flux form}
+	The \ul{flux form} $\Phi_{\vec{F}}$ is the 2-form field
+	\begin{align}
+		\Phi_{\vec{F}}\System{P_x\System{\vec{\bm{v}}, \vec{\bm{w}}}} &\Def \Det \mtrx{\vec{F}(\bm{x}), \vec{\bm{v}}, \vec{\bm{w}}} \\
+		&= F_1 dy\land dz - F_2 dx\land dz + F_3 dx\land dy
+	\end{align}
+\end{defn}
+
