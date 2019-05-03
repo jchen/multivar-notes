@@ -1,0 +1,61 @@
+% !TEX root = ../multivar-notes.tex
+\subsubsection*{April 27, 2019}
+
+\begin{defn}{Mass form of a function}
+	Let $U$ be a subset of $\R^3$ and $f : U\to \R$ a function. The \ul{mass form} $M_f$ is the 3-form defined by ***
+	\begin{equation}
+		\underbrace{M_f}_{\text{mass form of $f$}} \System{P_x\System{s}}
+	\end{equation}
+\end{defn}
+
+
+\textbf{Summary: work, flux, and mass forms on $\R^3$}
+
+Let $f$ be a function on $\R^3$ and $\vec{F}=\mtrx{F_1 \\ F_2 \\ F_3}$ be a vector field. Then
+\begin{align}
+	W_{\vec{F}} &= F_1 dx + F_2 dy + F_3 dz \\
+	\Phi_{\vec{F}} &= F_1\ dy\land dz - F_2\ dx\land dz + F_3\ dx\land dy \\
+	M_f &= f\ dx\land dy \land dz
+\end{align}
+
+*** (rip table that we missed demonstrating all the forms)
+
+\exercise{6.5.1}
+
+Work forms: a, j, l
+
+Work: b, i
+
+Flux forms: d, h, k
+
+Flux: c, e, f
+
+Mass form: g
+
+\exercise{6.5.3} Some of the following expressions do not make sense. Correct them so that they do. 
+
+\begin{enumerate}[a.]
+	\item $\Phi_{\vec{F}}\System{P_x\System{\vec{\bm{v}}_1, \vec{\bm{v}}_2}}$
+	\item $W_{\vec{F}}$
+	\item $M_f\System{P_x(\vec{\bm{v}}_1, \vec{\bm{v}}_2, \vec{\bm{v}}_3)}$
+	\item $\vec{\bm{v}}_1 \cdot (\vec{\bm{v}}_2 \times \vec{\bm{v}}_3)$
+	\item Right: $\Phi_{\vec{F}}$
+	\item $\Phi_{\vec{F}} = F_1\ dy\land dz - F_2\ dx\land dz + F_3\ dx\land dy$
+	\item $W_{\vec{F}}\System{P_x(\vec{\bm{v}})}$
+	\item $M_f$
+	\item Right: $W_{\vec{F}} = F_1 dx + F_2 dy + F_3 dz$
+\end{enumerate}
+
+\exercise{6.5.4} Show that $\Phi_{\vec{F}\times \vec{G}}=W_{\vec{F}}\land W_{\vec{G}}$
+\[\vec{F}=\mtrx{F_1 \\ F_2 \\ F_3}, \quad \vec{G}=\mtrx{G_1 \\ G_2 \\ G_3}\]
+\[\vec{F}\times\vec{G}=\mtrx{F_2G_3 - F_3G_2 \\ F_3G_1 - F_1 G_3 \\ G_2G_3 - F_3 G_2}\]
+\[\Phi_{\vec{F}\times \vec{G}}=(F_2G_3 - F_3G_2)\ dy\land dz - (F_3G_1 - F_1 G_3)\ dx\land dz + (G_2G_3 - F_3 G_2)\ dx\land dy\]
+
+Note $F_1dx \wedge G_2dy \overset{}{=} F_2G_2 dx\land dy$: 
+\begin{align*}
+	(F_1\ dx + F_2\ dy + F_3\ dz)\wedge (G_1\ dx + G_2\ dy + G_3\ dz) &= 
+\end{align*}
+
+\begin{defn}{Wedge product}
+	The \ul{wedge product} of the forms $\varphi\in A_c^k(\R^n)$ and $\omega \in A_c^l(\R^n)$ ***
+\end{defn}

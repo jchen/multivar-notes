@@ -1,0 +1,18 @@
+% !TEX root = ../multivar-notes.tex
+\subsubsection*{April 30, 2019}
+
+\exercise{6.6.5} Consider the region $X=P\cap B \subset \R^3$, where $P$ is the plane of equation $x+y+z=0$ and $B$ is the ball $x^2+y^2+z^2\leq 1$. Orient $P$ by the normal $\vec{N}=\mtrx{1 \\ 1 \\ 1}$ and orient the sphere $x^2+y^2+z^2=1$ by the outward-pointing normal. 
+
+\begin{enumerate}[a.]
+	\item Which of $\Sgn dx\land dy$, $\Sgn dx \land dz$, $\Sgn dy\land dz$ give the same orientation of $P$ as $\vec{N}$? 
+	
+	Answer: We construct a basis for $P$ that satisfies the right hand rule with $\vec{N}=\mtrx{1 \\ 1 \\ 1}$, say $\vec{v}_1 = \mtrx{1 \\ -1 \\ 0}, \vec{v}_2 = \mtrx{1 \\ 0 \\ -1}$. So checking $\Det \mtrx{\vec{N},\vec{v}_1,\vec{v}_2}=3>0$ tells us that this satisfies the right hand rule. Hence, using these bases we know that $\Sgn dx\land dy$ and $\Sgn dy\land dz$ are both orientation-preserving.
+	
+	\item Show that $X$ is a piece-with-boundary of $P$ and that the mapping below, for $0\leq t\leq 2\pi$, is a parametrization of $\partial X$. 
+	\[t\mapsto \Point{ \frac{\cos t}{\sqrt{2}}-\frac{\sin t}{\sqrt{6}} \\ -\frac{\cos t}{\sqrt{2}}-\frac{\sin t}{\sqrt{6}} \\ 2\frac{\sin t}{\sqrt{6}}}\]
+	
+	Answer: $X$ is a solid closed disk, being the intersection between a plane and a circle (at multiple points). $\partial X$ is defined by the solution of the equations $x+y+z=0$ and $x^2+y^2+z^2=1$, which gives $x^2+y^2+(x+y)^2=1$, and substituting gives us the conclusion we desire. 
+	
+	\item Is the parametrization in part b compatible with the boundary orientation of $\partial X$? 
+	
+\end{enumerate}
