@@ -1,0 +1,50 @@
+% !TEX root = ../multivar-notes.tex
+\subsection{Exterior Derivatives}
+\subsubsection*{May 5, 2019}
+Recall the derivative of a $0$-form: $df=D_1 f dx_1 + \cdots D_n f dx_n$
+
+This is the work form on a vector field, $=W_{\mtrx{D_1f \\ \vdots \\ D_nf}}=W_{\mathrm{grad}\ f} = W_{\vec{\nabla} f}$
+
+$1$-form: 
+\begin{align*}
+	dW_{\vec{F}}=&d\System{F_1dx + F_2dy + F_3dy}\\
+	=& dF_1dx + dF_2dy + dF_3dz \\
+	=& dF_1\wedge dx + dF_2\wedge dy + dF_3\wedge dz \\
+	=& \System{F_{1,y}dy+F_{1,z}dz}\land dx + \System{F_{2,x}dx+F_{2,z}dz}\land dy + \System{F_{3,x}dx + F_{3,y}dy}\land dz \\
+	=& (F_{3,y}-F_{2,z})dy\wedge dz - (F_{1,z}-F_{3,x})dx\wedge dz + (F_{2,x}-F_{1,y})dx\wedge dz \\
+	=&\Phi_{\mathrm{curl} \vec{F}}
+\end{align*}
+\[\mathrm{curl}\ \vec{F}=\vec{\nabla}\times \vec{F}=\mtrx{D_1 \\ D_2 \\ D_3}\times \mtrx{F_1 \\ F_2 \\ F_3}\]
+
+$2$-form: 
+\begin{align*}
+	d\Phi_{\vec{F}} =& d\System{F_1\ dy\land dz - F_2\ dx\wedge dz + F_3\ dx\wedge dy} \\
+	=& dF_1\wedge dy\wedge dz - dF_2\wedge dx\wedge dz+ dF_3\wedge dx\wedge dy \\
+	=& (F_{1,x}+F_{2,y}+F_{3,z})dx\wedge dy \wedge dz \\
+	=& M_{\mathrm{div}\ \vec{F}}=M_{\vec{\nabla}\cdot \vec{F}}
+\end{align*} 
+("div" = "divergence")
+
+\exercise{6.8.1}
+\begin{enumerate}[a.]
+	\item Which of the following are numbers? Vectors? Functions? Vector fields?
+	
+	\begin{enumerate}[i]
+		\item $\mathrm{grad}\ f$ : Vector Field
+		\item $\mathrm{curl}\ \vec{F}$ : Vector Field
+		\item $dx\wedge dy(\vec{\bm{V}}, \vec{\bm{w}})$ : Number
+		\item $\vec{\bm{u}}\cdot (\vec{\bm{v}}\times\vec{\bm{w}})$ Number
+		\item $\mathrm{grad}\ f(\vec{\bm{x}})\cdot \vec{\bm{v}}$ : Function
+		\item $\mathrm{div}\ \vec{F}$ : Function
+	\end{enumerate}
+	\item Which of the following expressions are identical: 
+	
+	\begin{itemize}
+		\item $\Div \vec{F}$, $\vec{\nabla}\cdot \vec{F}$
+		\item $\vec{\nabla}\times \vec{F}$, $\Curl \vec{F}$
+		\item $dF_1\wedge dx_1 + dF_2\wedge dx_2 + dF_3\wedge dx_3$, $\bm{d}f$, $W_{\Grad f}$
+		\item $\vec{\nabla}f$, $\Grad f$
+		\item $\bm{d}\Phi_{\vec{F}}$, $M_{\Div \vec{F}}$
+		\item $\Phi_{\Curl \vec{F}}$, $\bm{d}W_{\vec{F}}$, $\Phi_{\vec{\nabla}\times \vec{F}}$
+	\end{itemize}
+\end{enumerate}
