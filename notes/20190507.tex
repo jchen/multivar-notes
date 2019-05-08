@@ -1,0 +1,17 @@
+% !TEX root = ../multivar-notes.tex
+\subsubsection*{May 7, 2019}
+
+\[\varphi = -y\ dx + x\ dy \]
+
+Calculate $d\varphi$ directly from the definition! Recall that: 
+\[\lim_{h\to 0} \frac{1}{h^2}\int_{\partial P_{(x, y)}(h\vec{u},h\vec{v})}\varphi\]
+*** (A crap ton of stuff I wrote on the board that Krit has probably typed up)
+\[d\varphi = 2dx\wedge dy\]
+\[\boxed{\int_{\partial R}\varphi = \int_R d\varphi} = 2\times \mathrm{area}(R)\]
+We can try this with the circle. 
+\[\gamma(t)=\Point{R\cos t \\ R \sin t}\qquad t\in [0,2\pi]\]
+\[[D\gamma(t)]=\mtrx{-R\sin t \\ R \\ R \cos t}\]
+\[\int_{\mathrm{unit\ circle}}-y\ dx + x\ dy = \int_{t=0}^{2\pi} R^2\sin^2 t + R^2 \cos^2 t\ dt = 2\pi R^2 = 2\cdot \pi R^2\]
+
+Recall the fundamental theorem of AP Calculus BC: 
+\[f(b)-f(a)=\int_{\{a, b\}} f = \int_{[a, b]}df = \int_a^b f'(x)\ dx\]
