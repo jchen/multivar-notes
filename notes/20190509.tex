@@ -1,0 +1,71 @@
+% !TEX root = ../multivar-notes.tex
+\subsubsection*{May 9, 2019}
+
+\ul{\textbf{Summary: Integrals}}
+
+$\uparrow$ \emph{Concrete Calculus}
+
+The part from AP Calculus BC: 
+\begin{itemize}
+	\item Reimann sums
+	\item Bounded functions with bounded support
+	\item Integrate over density $\rightarrow$ total amount
+\end{itemize}
+But crazy mathematicians went \textbf{whoah}, \emph{what if we don't even use a Cartesian coordinate system}?! 
+\begin{itemize}
+	\item Change-of-variables
+	\item Correction factors to account for distortions ($\Det\ D\Phi$)
+\end{itemize} 
+And mathematicians went crazy again and went \textbf{whoat wtf}, \emph{what if I have a region in $\R^n$ parametrized in $\R^k, k<n$}?!
+\begin{itemize}
+	\item Integrate $k$-forms over parametrized domains in $\R^n$
+\end{itemize}
+Which leads to the question that under what changes of parametrization is my integral invariant? Turns out you only have to worry about
+\begin{itemize}
+	\item Orientation -- Integrals depend on the order of the basis vectors in $T_pM$ (gives a $\pm 1$-factor). 
+\end{itemize}
+Then is there a connection between the boundary and the area? 
+\[\int_X \varphi \text{ and } \int_{\partial X} ?\]
+\begin{itemize}
+	\item Exterior derivatives and Fundamental Theorem [of Calculus] (Stoke's General Theorem). 
+\end{itemize}
+$\downarrow$ \emph{Very General Abstract Calculus}
+
+\textbf{TL;DR} Mathematicians are crazy. 
+
+\begin{theorem}
+	\textbf{(Fundamental Theorem of Calculus; Stokes' Theorem).} 
+	\begin{equation}
+		\int_{\partial X} \varphi = \int_{X} D\varphi
+	\end{equation}
+\end{theorem}
+
+\vspace{1em}
+\hrule
+
+\ul{Some exercises on the generalized Stokes' theorem: }
+
+\exercise{6.10.1} Let $U$ be a compact piece-with-boundary of $\R^3$. Show that
+\[\Vol_3 U = \int_{\partial U} \frac{1}{3}(z\ dx\wedge dy + y\ dz\wedge dx + x\ dy\wedge dz). \]
+
+Well $\int_{\partial U} (\cdots) = \int_{U} d(\cdots)$ so $\int_{\partial U} (\cdots) = \int_{U} 3\cdot dx\wedge dy\wedge dz$.
+
+\exercise{6.10.2} Let $C$ be that part of thec one of equation $z=a-\sqrt{x^2+y^2}$ where $z\geq 0$, oriented by the upward-pointing normal. What is the integral
+\[\int_C x\ dy\wedge dz + y\ dz\wedge dx + z\ dx\wedge dy?\]
+
+Again we use Stokes' theorem and take this to be the boundary of a volume. (***)
+
+\exercise{6.10.3} Compute the integral of $x_1\ dx_2\wedge dx_3\wedge dx_4$ over the part of the 3-dimensional manifold of equation $x_1+x_2+x_3+x_4=a$, where $x_1,x_2,x_3,x_4\geq 0$, oriented so that the projection to $(x_1,x_2,x_3)$-coordinate $3$-space is orientation preserving. 
+\[\int_{X}dx_1\wedge dx_2\wedge dx_3\wedge dx_4=\int_{\partial X} x_1\ dx_2\wedge dx_3\wedge dx_4=\int_{\partial X_1}\varphi + \cdots + \int_{\partial X_n}\varphi + \int_{C}\varphi\]
+Where $\partial X_i$ are the axes of the graph and $\varphi$ is the given form. The area bounded is the area of a \emph{4-simplex}, and the other integrals evaluate to $0$ as they have some $0$ component being the axes. 
+
+\emph{A physics problem:} \exercise{6.11.1} Let $S$ be a torus obtained by rotating around the $z$-axes the circle of equation $(x-2)^2+z^2=1$. Orient $S$ by the outward pointing normal. Compute
+\[\int_{S}\Phi_{\vec{F}}\text{, where }\vec{F}=\mtrx{x+\cos(yz) \\ y+e^{x+z}\\ z-x^2y^2}.\]
+
+We use the flux form: 
+\begin{align*}
+	\int_S \Phi_{\vec{F}}&=\int_S F_1\ dy\wedge dz - F_2\ dx\wedge dz + F_3 dx\wedge dy \\
+	&= \int_{\mathrm{torus}} D_1F_1\ dx\wedge dy\wedge dz + D_2F_2\ dx\wedge dy\wedge dz + D_3F_3\ dx\wedge dy\wedge dz \\
+	&= 3\int_{\mathrm{torus}} dx\wedge dy\wedge dz
+\end{align*}
+So we just find the volume of the torus using BC Calculusy stuff. 
