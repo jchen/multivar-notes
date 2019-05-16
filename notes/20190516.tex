@@ -1,0 +1,12 @@
+% !TEX root = ../multivar-notes.tex
+\subsubsection*{May 14, 2019}
+
+We have a singularity at the origin, which is basically screwing up the fundamental theorem at the origin, so we just try to compute this manually. 
+
+We parametrize a unit sphere around the origin: 
+\[\omega : \mtrx{\theta \\ \varphi} \to \mtrx{\cos\theta\cos\varphi \\ \sin\theta\cos\varphi \\ \sin\theta} \qquad \bm{D}\omega = \mtrx{-\sin\theta\cos\varphi & -\cos\theta\sin\varphi \\ \cos\theta\cos\varphi & -\sin\theta\sin\varphi \\ 0 & \cos\varphi} \]
+\begin{align*}
+	\int\varphi =& \int \frac{x\ dy\wedge dz + y\ dz\wedge dx + z\ dx\wedge dy}{(x^2+y^2+z^2)^{3/2}} \\
+	=& \int \cos\theta \cos\varphi (\cos\theta\cos^2\varphi) + \sin\theta \cos\varphi (\sin \theta \cos^2 \varphi) \\
+	&+ \sin\theta (\sin^2\theta \sin\varphi \cos\varphi + \cos^2\theta \sin\varphi \cos\varphi)
+	\end{align*}
